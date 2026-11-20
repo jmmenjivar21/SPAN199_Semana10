@@ -1,0 +1,1486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spanish for Healthcare · Repaso para el examen final</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Space+Mono:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* SPANISH FOR HEALTHCARE WORKERS · FINAL EXAM REVIEW */
+:root{
+  --navy:#1B2E4F; --navy-light:#2E4977;
+  --terracotta:#C45D3A; --terracotta-light:#E0876A;
+  --gold:#D4A24C; --gold-light:#EBC373;
+  --sage:#6E8C5F; --sage-light:#9CB590;
+  --cream:#FBF7EE; --cream-dark:#F0E9D8;
+  --text:#1a1a1a; --text-light:#444; --text-hint:#666;
+  --soft-shadow:0 4px 16px rgba(27,46,79,0.08);
+  --tile-shadow:0 2px 8px rgba(27,46,79,0.06);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Source Sans 3','Helvetica Neue',Helvetica,Arial,sans-serif;background:var(--cream);color:var(--text);line-height:1.55;font-size:16px;min-height:100vh;}
+.skip-link{position:absolute;left:-9999px;top:0;background:var(--navy);color:#fff;padding:10px 16px;z-index:9999;text-decoration:none;}
+.skip-link:focus{left:8px;top:8px;}
+*:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:4px;}
+.app{max-width:1200px;margin:0 auto;padding:0 20px 64px;position:relative;}
+.app::before{content:'4';position:fixed;top:18px;right:24px;z-index:0;font-family:'Playfair Display',serif;font-size:9rem;font-weight:800;color:var(--navy);opacity:0.04;pointer-events:none;line-height:1;}
+
+.chap-head{margin-top:36px;padding:32px 36px;border-radius:18px;background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 100%);color:#fff;box-shadow:var(--soft-shadow);position:relative;overflow:hidden;}
+.chap-head::after{content:'';position:absolute;right:-40px;bottom:-40px;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(212,162,76,0.25),transparent 70%);}
+.header-badge{display:inline-block;font-family:'Space Mono',monospace;font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;background:rgba(212,162,76,0.22);color:var(--gold-light);padding:5px 12px;border-radius:20px;margin-bottom:10px;}
+.header-title{display:block;font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;line-height:1.15;margin-bottom:6px;}
+.header-subtitle{display:block;font-family:'Space Mono',monospace;font-size:0.85rem;letter-spacing:0.1em;color:var(--gold-light);text-transform:uppercase;}
+
+.prog-bar{height:8px;background:var(--cream-dark);border-radius:4px;margin:6px 0 0;overflow:hidden;}
+.prog-fill{height:100%;background:linear-gradient(90deg,var(--terracotta),var(--gold));width:0%;transition:width 0.6s ease-out;}
+.completion-wrap{margin:22px 0 20px;}
+.completion-top{display:flex;align-items:center;gap:12px;}
+.completion-label{font-family:'Space Mono',monospace;font-size:0.66rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-hint);}
+.completion-score{margin-left:auto;font-family:'Space Mono',monospace;font-size:0.72rem;font-weight:700;letter-spacing:0.04em;color:var(--sage);background:rgba(110,140,95,0.14);padding:4px 12px;border-radius:20px;white-space:nowrap;}
+.completion-pct{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:var(--terracotta);margin-left:14px;}
+.completion-legend{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;}
+.legend-pill{font-family:'Space Mono',monospace;font-size:0.6rem;letter-spacing:0.04em;padding:4px 10px;border-radius:20px;background:var(--cream-dark);color:var(--text-light);border:1px solid transparent;cursor:pointer;transition:all 0.2s;}
+.legend-pill:hover{background:#e6d9c2;color:var(--navy);}
+.legend-pill.done{background:rgba(110,140,95,0.18);border-color:var(--sage);color:var(--sage);}
+
+.submit-bar{background:var(--cream-dark);border-radius:12px;padding:14px 18px;margin-bottom:22px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+.submit-bar label{font-family:'Space Mono',monospace;font-size:0.66rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-light);}
+#studentName{flex:1;min-width:210px;border:2px solid #e2d5bd;border-radius:8px;background:#fff;padding:9px 13px;font-family:inherit;font-size:0.94rem;color:var(--navy);}
+#studentName:focus{outline:none;border-color:var(--gold);}
+.btn-download{background:var(--terracotta);color:#fff;border:none;border-radius:8px;padding:10px 20px;cursor:pointer;font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;transition:background 0.2s,transform 0.2s;}
+.btn-download:hover{background:var(--terracotta-light);transform:translateY(-1px);}
+.submit-hint{width:100%;font-family:'Space Mono',monospace;font-size:0.62rem;color:var(--text-hint);letter-spacing:0.04em;}
+
+.quiz-item{background:var(--cream);border-radius:12px;padding:16px 18px;margin-bottom:14px;border-left:4px solid var(--sage);}
+.quiz-item.correct{background:#eef6ea;border-left-color:var(--sage);}
+.quiz-item.wrong{background:#fbeceb;border-left-color:var(--terracotta);}
+.quiz-q{font-size:0.95rem;font-weight:700;color:var(--navy);margin-bottom:2px;}
+.quiz-q .qnum{font-family:'Space Mono',monospace;font-size:0.72rem;color:var(--text-hint);font-weight:400;margin-right:6px;}
+.quiz-gloss{font-size:0.8rem;color:var(--text-hint);font-style:italic;margin-bottom:12px;}
+.quiz-options{display:grid;gap:7px;}
+.quiz-opt{display:flex;align-items:flex-start;gap:10px;background:#fff;border:2px solid var(--cream-dark);border-radius:9px;padding:9px 13px;font-size:0.88rem;cursor:pointer;text-align:left;font-family:inherit;color:var(--text);width:100%;transition:border-color 0.2s,background 0.2s;}
+.quiz-opt:hover{border-color:var(--sage-light);background:#fbfaf6;}
+.quiz-opt.selected{border-color:var(--navy);background:#f3f5fa;}
+.quiz-opt.is-correct{border-color:var(--sage);background:#eef6ea;}
+.quiz-opt.is-wrong{border-color:var(--terracotta);background:#fbeceb;}
+.quiz-opt .letter{font-family:'Space Mono',monospace;font-size:0.7rem;color:var(--text-hint);flex-shrink:0;margin-top:2px;}
+.quiz-explain{font-size:0.84rem;margin-top:10px;padding:10px 13px;border-radius:8px;background:#fff;border-left:3px solid var(--gold);display:none;}
+.quiz-explain.show{display:block;}
+
+.task-input{width:100%;border:none;border-bottom:2px solid var(--cream-dark);background:transparent;font-family:inherit;font-size:0.92rem;color:var(--navy);padding:5px 6px;}
+.task-input:focus{outline:none;border-bottom-color:var(--gold);}
+.task-fb{font-family:'Space Mono',monospace;font-size:0.66rem;margin-top:6px;display:none;}
+.task-fb.show{display:block;}
+.task-fb.ok{color:var(--sage);}
+.task-fb.ng{color:var(--terracotta);}
+
+.nav{display:flex;gap:4px;flex-wrap:wrap;background:#fff;padding:6px;border-radius:14px;box-shadow:var(--tile-shadow);margin-bottom:24px;}
+.tab{flex:1 1 auto;min-width:110px;padding:12px 14px;background:transparent;border:none;border-radius:10px;font-family:'Source Sans 3',sans-serif;font-size:0.9rem;font-weight:600;color:var(--text-light);cursor:pointer;transition:all 0.18s ease;min-height:44px;}
+.tab:hover{background:var(--cream-dark);color:var(--navy);}
+.tab.active{background:var(--navy);color:#fff;box-shadow:0 2px 6px rgba(27,46,79,0.25);}
+
+.sec{display:none;animation:fadein 0.3s ease;}
+.sec.active{display:block;}
+@keyframes fadein{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+.sec-title{font-family:'Playfair Display',serif;font-size:1.65rem;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.sec-sub{font-family:'Space Mono',monospace;font-size:0.78rem;letter-spacing:0.12em;color:var(--terracotta);text-transform:uppercase;margin-bottom:22px;}
+
+.week-hero{background:#fff;padding:26px 30px;border-radius:14px;margin-bottom:24px;box-shadow:var(--tile-shadow);border-left:5px solid var(--terracotta);}
+.week-hero h1{font-family:'Playfair Display',serif;font-size:1.55rem;color:var(--navy);margin-bottom:8px;}
+.week-hero p{font-size:0.97rem;color:var(--text-light);margin-bottom:14px;}
+.topic-chips{display:flex;flex-wrap:wrap;gap:7px;}
+.chip{display:inline-block;padding:5px 11px;background:var(--cream-dark);color:var(--navy);border-radius:14px;font-size:0.78rem;font-weight:600;font-family:'Space Mono',monospace;letter-spacing:0.02em;}
+
+.ch-intro{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 100%);color:#fff;padding:24px 28px;border-radius:14px;margin-bottom:22px;box-shadow:var(--soft-shadow);position:relative;overflow:hidden;}
+.ch-intro::before{content:'';position:absolute;left:-30px;top:-30px;width:140px;height:140px;border-radius:50%;background:radial-gradient(circle,rgba(196,93,58,0.25),transparent 70%);}
+.ch-intro .label{position:relative;font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:6px;}
+.ch-intro h2{position:relative;font-family:'Playfair Display',serif;font-size:1.5rem;margin-bottom:10px;color:#fff;}
+.ch-intro p{position:relative;font-size:0.95rem;line-height:1.6;color:rgba(255,255,255,0.95);}
+
+.card{background:#fff;padding:22px 26px;border-radius:14px;margin-bottom:18px;box-shadow:var(--tile-shadow);}
+.card-title{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--navy);margin-bottom:14px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+.card-title .pill{font-family:'Space Mono',monospace;font-size:0.65rem;background:var(--gold);color:#fff;padding:3px 9px;border-radius:12px;letter-spacing:0.1em;}
+
+.obj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;}
+.obj{background:var(--cream);padding:14px 16px;border-radius:10px;border-left:3px solid var(--sage);display:flex;gap:11px;align-items:flex-start;}
+.obj-num{flex-shrink:0;width:24px;height:24px;border-radius:50%;background:var(--sage);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:0.72rem;font-weight:700;}
+.obj-text{font-size:0.93rem;color:var(--text);line-height:1.45;}
+
+.vocab-hint{text-align:center;font-size:0.82rem;color:var(--text-hint);font-style:italic;margin-bottom:14px;}
+.vocab-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:11px;}
+.vocab-card{perspective:1000px;height:118px;cursor:pointer;}
+.vocab-card-inner{position:relative;width:100%;height:100%;transition:transform 0.6s;transform-style:preserve-3d;}
+.vocab-card.flipped .vocab-card-inner{transform:rotateY(180deg);}
+.vocab-front,.vocab-back{position:absolute;width:100%;height:100%;-webkit-backface-visibility:hidden;backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:14px;border-radius:11px;text-align:center;box-shadow:var(--tile-shadow);}
+.vocab-front{background:#fff;border:2px solid var(--cream-dark);font-family:'Playfair Display',serif;font-weight:700;color:var(--navy);font-size:0.98rem;}
+.vocab-front small{display:block;font-family:'Space Mono',monospace;font-size:0.62rem;color:var(--text-hint);font-weight:400;margin-top:5px;letter-spacing:0.04em;}
+.vocab-back{background:linear-gradient(135deg,var(--terracotta),var(--terracotta-light));color:#fff;transform:rotateY(180deg);font-size:0.92rem;font-weight:600;}
+.vocab-ex{display:block;font-size:0.74rem;font-weight:400;font-style:italic;margin-top:6px;opacity:0.92;padding:0 18px;}
+.vocab-sound{position:absolute;top:6px;right:9px;font-size:0.75rem;opacity:0.55;}
+.vocab-replay{position:absolute;bottom:6px;right:8px;background:rgba(255,255,255,0.22);border:none;border-radius:50%;width:30px;height:30px;font-size:0.85rem;cursor:pointer;color:#fff;line-height:30px;padding:0;}
+.vocab-replay:hover,.vocab-replay:focus-visible{background:rgba(255,255,255,0.4);outline:2px solid #fff;}
+.vocab-card:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:12px;}
+.vocab-card.conn-card .vocab-front{border-color:var(--sage-light);color:var(--sage);}
+.vocab-card.conn-card .vocab-back{background:linear-gradient(135deg,var(--sage),#5A7350);}
+
+.gbox{background:#fff;padding:24px 28px;border-radius:14px;margin-bottom:22px;box-shadow:var(--tile-shadow);border-top:4px solid var(--terracotta);}
+.gbox.alt{border-top-color:var(--sage);}
+.gbox.alt2{border-top-color:var(--gold);}
+.gbox h3{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--navy);margin-bottom:6px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+.gbox h3 .num{font-family:'Space Mono',monospace;font-size:0.7rem;background:var(--terracotta);color:#fff;padding:4px 10px;border-radius:11px;letter-spacing:0.1em;}
+.gbox.alt h3 .num{background:var(--sage);}
+.gbox.alt2 h3 .num{background:var(--gold);color:var(--navy);}
+.gbox .sub{font-size:0.9rem;color:var(--text-hint);margin-bottom:16px;font-style:italic;}
+
+.conj-table{width:100%;border-collapse:collapse;margin:14px 0;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 1px 4px rgba(27,46,79,0.05);}
+.conj-table th,.conj-table td{padding:9px 13px;text-align:left;font-size:0.9rem;border-bottom:1px solid var(--cream-dark);}
+.conj-table th{background:var(--navy);color:#fff;font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;}
+.conj-table td .pn{color:var(--text-hint);}
+.conj-table td .fm{color:var(--terracotta);font-weight:700;font-style:italic;}
+.conj-table .accent{color:var(--terracotta);font-weight:700;}
+.conj-table tr:last-child td{border-bottom:none;}
+
+.three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:14px 0;}
+@media(max-width:740px){.three-col{grid-template-columns:1fr;}}
+.col-card{background:var(--cream);padding:16px 18px;border-radius:10px;border-top:4px solid var(--terracotta);}
+.col-card.gd{border-top-color:var(--gold);}
+.col-card.sg{border-top-color:var(--sage);}
+.col-card h4{font-family:'Playfair Display',serif;font-size:1.12rem;color:var(--navy);margin-bottom:4px;}
+.col-card .meaning{font-family:'Space Mono',monospace;font-size:0.68rem;color:var(--text-hint);letter-spacing:0.05em;text-transform:uppercase;margin-bottom:10px;}
+.col-card .ex{font-style:italic;font-size:0.85rem;color:var(--text);background:#fff;padding:7px 10px;border-radius:6px;margin-bottom:5px;}
+.col-card .ex strong{color:var(--terracotta);font-style:normal;}
+.col-card.gd .ex strong{color:#A07A2D;}
+.col-card.sg .ex strong{color:var(--sage);}
+
+.ex-box{background:var(--cream);border-left:3px solid var(--sage);padding:12px 16px;border-radius:8px;margin:14px 0;}
+.ex-box p{font-size:0.9rem;color:var(--text);margin:4px 0;}
+.ex-box em{color:var(--text-hint);font-style:italic;}
+.ojo{background:#FFF6F0;border-left:4px solid var(--terracotta);padding:14px 18px;border-radius:8px;margin:16px 0;}
+.ojo-title{font-family:'Space Mono',monospace;font-size:0.72rem;color:var(--terracotta);letter-spacing:0.12em;text-transform:uppercase;font-weight:700;margin-bottom:6px;}
+.ojo p{font-size:0.92rem;color:var(--text);line-height:1.55;}
+.ojo em{color:var(--terracotta);font-style:italic;font-weight:600;}
+
+/* Alphabet grid */
+.alpha-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:8px;margin:14px 0;}
+.alpha-cell{background:var(--cream);border-radius:8px;padding:9px 6px;text-align:center;border:1px solid var(--cream-dark);}
+.alpha-cell .ltr{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:var(--navy);display:block;}
+.alpha-cell .nm{font-family:'Space Mono',monospace;font-size:0.62rem;color:var(--terracotta);letter-spacing:0.04em;display:block;margin-top:2px;}
+.vowel-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:14px 0;}
+.vowel-cell{background:linear-gradient(135deg,var(--navy),var(--navy-light));color:#fff;border-radius:10px;padding:14px 10px;text-align:center;}
+.vowel-cell .v{font-family:'Playfair Display',serif;font-size:2rem;font-weight:800;display:block;line-height:1;}
+.vowel-cell .s{font-family:'Space Mono',monospace;font-size:0.72rem;color:var(--gold-light);display:block;margin-top:6px;letter-spacing:0.06em;}
+.vowel-cell .w{font-size:0.8rem;color:rgba(255,255,255,0.9);display:block;margin-top:4px;font-style:italic;}
+
+.ex-item{display:flex;align-items:baseline;gap:10px;padding:11px 0;border-bottom:1px solid var(--cream-dark);font-size:0.97rem;}
+.ex-item:last-of-type{border-bottom:none;}
+.ex-num{flex-shrink:0;width:28px;height:28px;border-radius:50%;background:var(--cream);color:var(--navy);display:inline-flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:0.78rem;font-weight:700;}
+.ex-text{flex:1;line-height:1.9;color:var(--text);}
+.ex-hint{font-family:'Space Mono',monospace;font-size:0.78rem;color:var(--terracotta);margin-left:4px;}
+.blk{display:inline-block;width:120px;padding:6px 10px;border:2px solid var(--cream-dark);border-radius:6px;font-family:'Source Sans 3',sans-serif;font-size:0.95rem;color:var(--navy);background:#fff;outline:none;transition:border-color 0.15s;}
+.blk.wide{width:170px;}
+.blk:focus{border-color:var(--gold);}
+.blk.ok{border-color:var(--sage);background:#F4F8F0;color:#3F5C32;}
+.blk.ng{border-color:var(--terracotta);background:#FFF0EA;color:#8E3A1F;}
+
+.chk-btn,.rst-btn,.toggle-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border:none;border-radius:8px;font-family:'Source Sans 3',sans-serif;font-size:0.92rem;font-weight:700;cursor:pointer;transition:all 0.15s;min-height:42px;margin-top:14px;}
+.chk-btn{background:var(--navy);color:#fff;}
+.chk-btn:hover{background:var(--navy-light);}
+.rst-btn{background:#fff;color:var(--navy);border:2px solid var(--cream-dark);margin-left:6px;}
+.rst-btn:hover{border-color:var(--navy);}
+.toggle-btn{background:var(--gold);color:var(--navy);margin-left:6px;}
+.toggle-btn:hover{background:var(--gold-light);}
+.res-msg{margin-top:12px;font-size:0.93rem;font-weight:700;min-height:22px;}
+.res-msg.ok{color:#3F5C32;}
+.res-msg.ng{color:#8E3A1F;}
+
+.word-bank{background:var(--cream);padding:11px 14px;border-radius:8px;margin-bottom:14px;font-size:0.88rem;}
+.word-bank-label{font-family:'Space Mono',monospace;font-size:0.7rem;color:var(--text-hint);letter-spacing:0.1em;text-transform:uppercase;display:block;margin-bottom:4px;}
+.word-bank-words span{display:inline-block;background:#fff;padding:3px 9px;border-radius:11px;margin:2px 3px;font-size:0.84rem;border:1px solid var(--cream-dark);color:var(--navy);font-weight:700;}
+
+/* Matching */
+.match-cols{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.match-col-label{font-family:'Space Mono',monospace;font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-hint);margin-bottom:6px;}
+.mi{padding:11px 13px;border:2px solid var(--cream-dark);border-radius:9px;cursor:pointer;font-size:0.86rem;background:#fff;transition:all 0.12s;line-height:1.4;margin-bottom:7px;color:var(--text);}
+.mi:hover{border-color:var(--sage-light);}
+.mi.sel{border-color:var(--navy);background:#f3f5fa;color:var(--navy);}
+.mi.done{border-color:var(--sage);background:#eef6ea;color:#3F5C32;pointer-events:none;opacity:0.75;}
+.mi.bad{border-color:var(--terracotta);background:#fbeceb;}
+
+/* Conjugation game */
+.game-wrap{background:var(--cream);border-radius:14px;padding:22px;text-align:center;}
+.game-scorebar{display:flex;justify-content:center;gap:22px;margin-bottom:16px;font-family:'Space Mono',monospace;font-size:0.72rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-hint);}
+.game-scorebar b{display:block;font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--terracotta);margin-top:2px;}
+.game-prompt{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--navy);margin:10px 0 4px;}
+.game-sub{font-size:0.85rem;color:var(--text-hint);font-style:italic;margin-bottom:18px;}
+.game-opts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;max-width:560px;margin:0 auto;}
+@media(max-width:520px){.game-opts{grid-template-columns:1fr;}}
+.game-opt{background:#fff;border:2px solid var(--cream-dark);border-radius:10px;padding:14px 10px;font-family:'Source Sans 3',sans-serif;font-size:1rem;font-weight:700;color:var(--navy);cursor:pointer;transition:all 0.12s;}
+.game-opt:hover{border-color:var(--sage-light);transform:translateY(-2px);}
+.game-opt.is-correct{border-color:var(--sage);background:#eef6ea;color:#3F5C32;}
+.game-opt.is-wrong{border-color:var(--terracotta);background:#fbeceb;color:#8E3A1F;}
+.game-feedback{min-height:22px;margin-top:14px;font-weight:700;font-size:0.95rem;}
+.game-feedback.ok{color:#3F5C32;}
+.game-feedback.ng{color:#8E3A1F;}
+.game-done{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--navy);}
+
+.cult-card{background:linear-gradient(135deg,var(--sage) 0%,#5A7350 100%);color:#fff;padding:24px 28px;border-radius:14px;margin-bottom:18px;box-shadow:var(--soft-shadow);}
+.cult-card .label{font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:6px;}
+.cult-card h3{font-family:'Playfair Display',serif;font-size:1.4rem;margin-bottom:12px;color:#fff;}
+.cult-card p{font-size:0.95rem;line-height:1.65;color:rgba(255,255,255,0.95);}
+.cult-card .fact-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;}
+.cult-card .fact-pills span{background:rgba(255,255,255,0.18);padding:5px 11px;border-radius:14px;font-size:0.82rem;font-weight:600;}
+
+.footer{margin-top:36px;padding:20px;text-align:center;font-family:'Space Mono',monospace;font-size:0.76rem;color:var(--text-hint);letter-spacing:0.05em;}
+
+@media(max-width:600px){
+  .chap-head{padding:24px 22px;}
+  .header-title{font-size:1.7rem;}
+  .gbox,.card,.cult-card,.ch-intro{padding:18px 20px;}
+  .three-col{grid-template-columns:1fr;}
+  .ex-item{flex-wrap:wrap;}
+}
+
+/* ── Shared additions (dialogue, pod, formula) ── */
+.dlg{background:var(--cream);border-radius:10px;padding:14px 18px;margin:14px 0;}
+.dlg p{font-size:0.93rem;margin:6px 0;line-height:1.5;}
+.dlg .who{display:inline-block;min-width:92px;font-family:'Space Mono',monospace;font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--terracotta);font-weight:700;}
+.dlg .who.pt{color:var(--sage);}
+.dlg .en{display:block;font-size:0.8rem;color:var(--text-hint);font-style:italic;margin-left:96px;}
+.pod-hero{background:linear-gradient(135deg,#9B2C2C 0%,#B84444 100%);color:#fff;padding:24px 28px;border-radius:14px;margin-bottom:22px;box-shadow:var(--soft-shadow);position:relative;overflow:hidden;}
+.pod-hero::after{content:'🩹';position:absolute;right:22px;bottom:6px;font-size:4.5rem;opacity:0.22;}
+.pod-hero .label{font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.75);margin-bottom:6px;}
+.pod-hero h2{font-family:'Playfair Display',serif;font-size:1.5rem;margin-bottom:10px;color:#fff;}
+.pod-hero p{font-size:0.95rem;line-height:1.6;color:rgba(255,255,255,0.95);max-width:760px;}
+.vocab-card.pod-card .vocab-front{border-color:#E3B2B2;color:#9B2C2C;}
+.vocab-card.pod-card .vocab-back{background:linear-gradient(135deg,#9B2C2C,#B84444);}
+.tab.pod-tab{color:#9B2C2C;}
+.tab.pod-tab.active{background:#9B2C2C;color:#fff;}
+.formula{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:12px 0;font-size:0.95rem;}
+.formula span{background:var(--cream);border:1px solid var(--cream-dark);border-radius:8px;padding:6px 11px;font-weight:600;color:var(--navy);}
+.formula span.arrow{background:none;border:none;color:var(--terracotta);font-weight:700;padding:0 2px;}
+.formula span.res{background:var(--terracotta);border-color:var(--terracotta);color:#fff;}
+.tts-note{font-size:0.78rem;color:var(--text-hint);text-align:center;margin-top:-6px;margin-bottom:14px;}
+/* ── Capítulo 3 additions ── */
+.play-btn{display:inline-flex;align-items:center;gap:5px;background:var(--navy);color:#fff;border:none;border-radius:16px;padding:5px 12px;font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.04em;cursor:pointer;margin-right:8px;vertical-align:middle;}
+.play-btn:hover{background:var(--navy-light);}
+.alpha-cell.num-cell{cursor:pointer;border:1px solid var(--cream-dark);font-family:inherit;transition:all 0.12s;}
+.alpha-cell.num-cell:hover{border-color:var(--gold);background:#fff;transform:translateY(-1px);}
+.alpha-cell.num-cell .nm{text-transform:none;}
+/* ── Capítulo 4 additions ── */
+.tab.rev-tab{color:var(--sage);}
+.tab.rev-tab.active{background:var(--sage);color:#fff;}
+.body-wrap{display:grid;grid-template-columns:minmax(220px,320px) 1fr;gap:20px;align-items:start;margin:10px 0;}
+@media(max-width:700px){.body-wrap{grid-template-columns:1fr;}}
+.body-fig{background:var(--cream);border-radius:12px;padding:10px;}
+.body-fig svg{width:100%;height:auto;display:block;}
+.body-fig .bp{fill:#E9DCC4;stroke:#CDB896;stroke-width:2;}
+.body-fig .hs{cursor:pointer;}
+.body-fig .hs circle{fill:var(--terracotta);stroke:#fff;stroke-width:2;transition:fill 0.15s;}
+.body-fig .hs:hover circle,.body-fig .hs:focus circle,.body-fig .hs.on circle{fill:var(--navy);}
+.body-fig .hs text{fill:#fff;font-family:'Space Mono',monospace;font-size:11px;font-weight:700;pointer-events:none;}
+.body-fig .hs:focus{outline:none;}
+.body-label{background:var(--navy);color:#fff;border-radius:12px;padding:16px 18px;margin-bottom:12px;display:flex;flex-direction:column;gap:2px;}
+.body-label .bl-num{font-family:'Space Mono',monospace;font-size:0.7rem;color:var(--gold-light);letter-spacing:0.1em;}
+.body-label .bl-word{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;}
+.body-label .bl-en{font-size:0.9rem;color:rgba(255,255,255,0.8);font-style:italic;}
+
+/* ═══ Capítulo 6 additions ═══ */
+.app::before{content:'6';}
+.tab.com-tab{color:#3F7C85;}
+.tab.com-tab.active{background:#3F7C85;color:#fff;}
+.pod-hero::after{content:'🩺';}
+.play-btn.mini{padding:2px 8px;font-size:0.62rem;margin:0 0 0 6px;}
+
+/* map */
+.map-wrap{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:680px;margin:0 auto;}
+@media(max-width:700px){.map-wrap{grid-template-columns:1fr;}}
+.map-floor{background:var(--cream);border-radius:12px;padding:10px;}
+.map-cap{font-family:'Space Mono',monospace;font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--terracotta);font-weight:700;margin-bottom:6px;text-align:center;}
+.map-floor svg{width:100%;height:auto;display:block;}
+.map-floor .hall{fill:#E9DCC4;}
+.map-floor .room rect{fill:#fff;stroke:var(--navy);stroke-width:2;transition:fill 0.15s;}
+.map-floor .room{cursor:pointer;}
+.map-floor .room:hover rect,.map-floor .room:focus rect{fill:#FFF3D6;}
+.map-floor .room.on rect{fill:var(--gold-light);}
+.map-floor .room.ok rect{fill:#CFE3C6;}
+.map-floor .room.bad rect{fill:#F4C9BE;}
+.map-floor .room text{font-family:'Source Sans 3',sans-serif;font-size:12px;font-weight:700;fill:var(--navy);pointer-events:none;}
+.map-floor .room:focus{outline:none;}
+.map-floor .fixed rect{fill:var(--navy);stroke:var(--navy);}
+.map-floor .fixed text{fill:#fff;font-size:11px;font-weight:700;font-family:'Space Mono',monospace;}
+.map-floor .arrow-t{font-family:'Space Mono',monospace;font-size:10px;fill:#8a7a60;}
+.map-label{max-width:680px;margin:12px auto 0;background:var(--navy);color:#fff;border-radius:12px;padding:12px 18px;display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;}
+.map-label .ml-es{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;}
+.map-label .ml-en{font-size:0.92rem;color:rgba(255,255,255,0.8);font-style:italic;}
+.dir-box{background:var(--cream);border-radius:12px;padding:16px 18px;margin-bottom:12px;border-left:5px solid var(--gold);}
+.dir-top{display:flex;justify-content:space-between;font-family:'Space Mono',monospace;font-size:0.72rem;color:var(--text-hint);letter-spacing:0.06em;margin-bottom:8px;}
+.dir-text{font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--navy);line-height:1.4;margin-bottom:10px;}
+.dir-btns{margin-bottom:6px;}
+select.sel{font-family:inherit;font-size:0.92rem;padding:4px 8px;border:2px solid var(--cream-dark);border-radius:8px;background:#fff;color:var(--navy);font-weight:600;}
+select.sel.ok{border-color:var(--sage);background:#F2F8EE;}
+select.sel.ng{border-color:var(--terracotta);background:#FCF0EE;}
+
+/* ordering */
+.ord-ans{min-height:52px;background:var(--cream);border:2px dashed var(--cream-dark);border-radius:10px;padding:8px;margin:10px 0;counter-reset:st;}
+.ord-ans:empty::before{content:'Your order appears here…';color:var(--text-hint);font-size:0.85rem;font-style:italic;padding:6px;display:block;}
+.ord-pool{display:flex;flex-direction:column;gap:6px;}
+.ord-step{display:block;width:100%;text-align:left;background:#fff;border:2px solid var(--cream-dark);border-radius:9px;padding:9px 12px;font-family:inherit;font-size:0.92rem;color:var(--text);cursor:pointer;margin-bottom:6px;}
+.ord-step:hover{border-color:var(--gold);}
+.ord-ans .ord-step{counter-increment:st;}
+.ord-ans .ord-step::before{content:counter(st) '. ';font-weight:700;color:var(--terracotta);}
+.ord-ans .ord-step.ok{border-color:var(--sage);background:#F2F8EE;}
+.ord-ans .ord-step.ng{border-color:var(--terracotta);background:#FCF0EE;}
+
+/* intake form */
+.intake{border:2px solid var(--navy);border-radius:12px;overflow:hidden;margin:14px 0;}
+.intake-head{background:var(--navy);color:#fff;font-family:'Space Mono',monospace;font-size:0.72rem;letter-spacing:0.08em;padding:10px 14px;}
+.intake-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px 18px;padding:14px;}
+@media(max-width:620px){.intake-grid{grid-template-columns:1fr;}}
+.intake-grid label{font-size:0.78rem;font-weight:700;color:var(--text-hint);text-transform:uppercase;letter-spacing:0.04em;display:flex;flex-direction:column;gap:3px;}
+.intake-grid .blk{width:100%;min-width:0;text-transform:none;font-size:0.95rem;}
+
+/* reading */
+.flyer{border:2px solid var(--sage);border-radius:14px;overflow:hidden;margin-bottom:12px;background:#fff;}
+.flyer-head{background:linear-gradient(135deg,var(--sage),#5A7350);color:#fff;padding:16px 20px;}
+.flyer-name{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;}
+.flyer-tag{font-size:0.9rem;opacity:0.95;}
+.flyer-body{display:grid;grid-template-columns:1fr 1fr;gap:6px 24px;padding:14px 20px;}
+@media(max-width:620px){.flyer-body{grid-template-columns:1fr;}}
+.flyer-col h4{font-family:'Space Mono',monospace;font-size:0.74rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--navy);margin:10px 0 4px;}
+.flyer-col p{font-size:0.94rem;line-height:1.55;}
+.flyer-foot{background:#FCF0EE;color:#8A3A22;font-weight:700;font-size:0.9rem;padding:10px 20px;border-top:1px solid #F0D2C8;}
+.article{background:#fff;border:1px solid var(--cream-dark);border-radius:12px;padding:18px 22px;margin-bottom:16px;}
+.article p{font-size:0.98rem;line-height:1.7;margin-bottom:12px;}
+.article .src{font-size:0.75rem;color:var(--text-hint);font-style:italic;margin:0;}
+.gl{border-bottom:2px dotted var(--terracotta);cursor:help;position:relative;}
+.gl.light{border-bottom-color:rgba(255,255,255,0.8);}
+.gl.on::after{content:attr(data-en);position:absolute;left:50%;bottom:125%;transform:translateX(-50%);background:var(--navy);color:#fff;font-size:0.78rem;font-style:italic;font-weight:600;white-space:nowrap;padding:4px 9px;border-radius:6px;z-index:5;box-shadow:var(--soft-shadow);}
+.real-note{font-size:0.84rem;color:var(--text-light);background:#EEF5F6;border-left:4px solid #3F7C85;padding:9px 13px;border-radius:6px;margin:8px 0 16px;}
+
+/* data bars */
+.bar-group{margin-bottom:16px;}
+.bar-title{font-weight:700;color:var(--navy);font-size:0.95rem;margin-bottom:6px;}
+.bar-row{display:grid;grid-template-columns:130px 1fr 56px;align-items:center;gap:10px;margin-bottom:5px;cursor:pointer;}
+.bar-row .lbl{font-size:0.84rem;color:var(--text-light);}
+.bar-track{background:var(--cream-dark);border-radius:6px;height:20px;overflow:hidden;}
+.bar-fill{height:100%;border-radius:6px;width:0;transition:width 1s ease-out;}
+.bar-row .val{font-family:'Space Mono',monospace;font-weight:700;font-size:0.85rem;color:var(--navy);}
+.refl{margin-bottom:14px;}
+.refl label{display:block;font-weight:700;color:var(--navy);font-size:0.92rem;margin-bottom:6px;}
+.refl textarea{width:100%;border:2px solid var(--cream-dark);border-radius:10px;padding:10px 12px;font-family:inherit;font-size:0.92rem;resize:vertical;}
+.refl textarea:focus{outline:none;border-color:var(--gold);}
+.src-list{padding-left:20px;font-size:0.9rem;line-height:1.8;}
+.src-list a{color:var(--navy);}
+
+/* sorting */
+.sort-pool{display:flex;flex-wrap:wrap;gap:8px;min-height:44px;background:var(--cream);border-radius:10px;padding:10px;margin-bottom:12px;}
+.sort-card{background:#fff;border:2px solid var(--cream-dark);border-radius:9px;padding:7px 11px;font-family:inherit;font-size:0.86rem;cursor:pointer;color:var(--text);text-align:left;}
+.sort-card.sel{border-color:var(--navy);background:#EEF2F9;box-shadow:0 0 0 2px rgba(27,46,79,0.15);}
+.sort-card.ok{border-color:var(--sage);background:#F2F8EE;}
+.sort-card.ng{border-color:var(--terracotta);background:#FCF0EE;}
+.sort-bins{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px;}
+@media(max-width:700px){.sort-bins{grid-template-columns:1fr 1fr;}}
+.sort-bin{border:2px dashed var(--navy-light);border-radius:12px;padding:8px;min-height:90px;background:#fff;cursor:pointer;display:flex;flex-direction:column;gap:6px;}
+.sort-bin:hover{background:#FBF7EE;}
+.sort-bin h5{font-family:'Space Mono',monospace;font-size:0.72rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--terracotta);text-align:center;}
+
+/* sentence builder */
+.bld{margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--cream-dark);}
+.bld-q{font-size:0.92rem;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.bld-q span{font-weight:400;color:var(--text-hint);font-style:italic;}
+.bld-ans{min-height:40px;background:var(--cream);border-radius:8px;padding:6px;display:flex;flex-wrap:wrap;gap:6px;margin-bottom:6px;border:2px solid transparent;}
+.bld-ans.ok{border-color:var(--sage);background:#F2F8EE;}
+.bld-ans.ng{border-color:var(--terracotta);background:#FCF0EE;}
+.bld-pool{display:flex;flex-wrap:wrap;gap:6px;}
+.tile-w{background:#fff;border:2px solid var(--navy);color:var(--navy);border-radius:8px;padding:5px 10px;font-family:inherit;font-size:0.9rem;font-weight:600;cursor:pointer;}
+.bld-ans .tile-w{background:var(--navy);color:#fff;}
+.bld-fb{font-size:0.82rem;margin-top:4px;}
+/* ═══ Repaso final ═══ */
+.app::before{content:'★';}
+.tab.mix-tab{color:#6E4C9B;}
+.tab.mix-tab.active{background:#6E4C9B;color:#fff;}
+.wk-map{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+@media(max-width:860px){.wk-map{grid-template-columns:1fr 1fr;}}
+@media(max-width:560px){.wk-map{grid-template-columns:1fr;}}
+.wk-card{display:flex;flex-direction:column;gap:4px;text-align:left;background:var(--cream);border:none;border-top:5px solid var(--terracotta);border-radius:12px;padding:14px 16px;font-family:inherit;cursor:pointer;color:var(--text);}
+.wk-card:hover,.wk-card:focus{outline:3px solid var(--gold);}
+.wk-card.mid{border-top-color:var(--gold);background:#F1EBF8;cursor:default;}
+.wk-ic{font-size:1.5rem;}
+.wk-num{font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--terracotta);font-weight:700;}
+.wk-card b{font-family:'Playfair Display',serif;color:var(--navy);font-size:1.1rem;}
+.wk-sub{font-size:0.82rem;color:var(--text-light);line-height:1.45;}
+.vchips{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;}
+@media(max-width:860px){.vchips{grid-template-columns:repeat(2,1fr);}}
+.vchip{display:flex;flex-direction:column;gap:2px;text-align:left;border:2px solid var(--cream-dark);background:#fff;border-radius:10px;padding:8px 10px;font-family:inherit;cursor:pointer;}
+.vchip:hover,.vchip:focus{border-color:var(--gold);}
+.vchip b{color:var(--navy);font-size:0.92rem;}
+.vchip span{color:var(--text-hint);font-size:0.78rem;font-style:italic;}
+.say{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--cream-dark);}
+.say p{margin:0 0 4px;font-size:0.94rem;}
+.say details{font-size:0.9rem;}
+.say summary{cursor:pointer;color:var(--terracotta);font-weight:700;font-size:0.85rem;}
+.say details p{margin-top:6px;display:flex;gap:8px;align-items:center;flex-wrap:wrap;}
+.next-wk{text-align:right;font-weight:700;margin:6px 4px 20px;}
+.next-wk a{color:var(--terracotta);}
+.wk-tag{display:inline-block;background:#F1EBF8;color:#4E3475;border-radius:8px;padding:1px 7px;font-family:'Space Mono',monospace;font-size:0.68rem;font-weight:700;vertical-align:middle;}
+.mix-info{font-size:0.84rem;color:var(--text-hint);margin-bottom:10px;}
+.conj-table td.accent{width:46%;}
+</style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<div class="app">
+
+  <div class="chap-head">
+    <span class="header-badge">SPSCC · SPANISH FOR HEALTHCARE</span>
+    <span class="header-title">Repaso para el examen final</span>
+    <span class="header-subtitle">Final Exam Review · Semanas 1 a 9 · grammar, topics and practice</span>
+  </div>
+
+  <div class="completion-wrap">
+    <div class="completion-top">
+      <span class="completion-label">Mi progreso · My progress</span>
+      <span class="completion-score" id="completionScore">★ 0% correcto</span>
+      <span class="completion-pct" id="completionPct">0%</span>
+    </div>
+    <div class="prog-bar"><div class="prog-fill" id="pf" style="width:0%"></div></div>
+    <div class="completion-legend" id="completionLegend"></div>
+  </div>
+
+  <div class="submit-bar">
+    <label for="studentName">Nombre / Name</label>
+    <input id="studentName" type="text" placeholder="Type your full name here" autocomplete="name">
+    <button class="btn-download" onclick="downloadReport()">⬇ Download Report</button>
+    <span class="submit-hint">Work week by week. Each tab has a short review of the grammar and topic, then practice. Download your report at the end to see what to study.</span>
+  </div>
+
+  <nav class="nav" aria-label="Semanas">
+    <button class="tab active" onclick="switchTab('ov',this)">Inicio</button>
+    <button class="tab" onclick="switchTab('s1',this)">👋 Semana 1</button>
+    <button class="tab" onclick="switchTab('s2',this)">🙏 Semana 2</button>
+    <button class="tab" onclick="switchTab('s3',this)">🚑 Semana 3</button>
+    <button class="tab" onclick="switchTab('s4',this)">🦵 Semana 4</button>
+    <button class="tab" onclick="switchTab('s6',this)">🏥 Semana 6</button>
+    <button class="tab" onclick="switchTab('s7',this)">🩺 Semana 7</button>
+    <button class="tab" onclick="switchTab('s8',this)">🥗 Semana 8</button>
+    <button class="tab" onclick="switchTab('s9',this)">📋 Semana 9</button>
+    <button class="tab mix-tab" onclick="switchTab('mix',this)">🎓 Examen mixto</button>
+  </nav>
+
+  <div id="main-content"></div>
+
+  <!-- ═══ INICIO ═══ -->
+  <section class="sec active" id="sec-ov">
+    <h2 class="sec-title">Repaso para el examen final</h2>
+    <p class="sec-sub">semanas 1 a 4 y 6 a 9 · Semana 5 fue el examen parcial</p>
+    <div class="ch-intro">
+      <div class="label">¿Cómo estudiar? · How to use this page</div>
+      <h2>One tab per week, from the first greeting to the intake form</h2>
+      <p>Each week has the same four parts: <strong>1 · El tema</strong> (what situation you can handle), <strong>2 · Gramática</strong> (short tables with 🔊), <strong>3 · Vocabulario clave</strong> (tap a word to hear it) and <strong>4 · Práctica</strong>: fill in the blanks, multiple choice, and three things to say out loud. Finish with the <strong>🎓 Examen mixto</strong>: 20 random questions from every week, a new set every time.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">Mapa del curso <span class="pill">8 SEMANAS</span></div>
+      <div class="wk-map">
+        <button type="button" class="wk-card" onclick="jumpTab('s1')"><span class="wk-ic">👋</span><span class="wk-num">Semana 1 · Capítulo 1</span><b>Primeras palabras</b><span class="wk-sub">saludos · ser · llamarse · usted vs. tú · el alfabeto · preguntas personales</span></button>
+        <button type="button" class="wk-card" onclick="jumpTab('s2')"><span class="wk-ic">🙏</span><span class="wk-num">Semana 2 · Capítulo 2</span><b>Cortesía y mandatos</b><span class="wk-sub">expresiones de cortesía · mandatos formales · negativos · tú y ustedes</span></button>
+        <button type="button" class="wk-card" onclick="jumpTab('s3')"><span class="wk-ic">🚑</span><span class="wk-num">Semana 3 · Capítulo 3</span><b>Emergencias</b><span class="wk-sub">pedir y ofrecer ayuda · hay, tiene, está, no puede · números 0 a 100 · la edad</span></button>
+        <button type="button" class="wk-card" onclick="jumpTab('s4')"><span class="wk-ic">🦵</span><span class="wk-num">Semana 4 · Capítulo 4</span><b>El cuerpo y el dolor</b><span class="wk-sub">partes del cuerpo · doler · me, te, le, nos, les · describir y preguntar sobre el dolor</span></button>
+        <button type="button" class="wk-card" onclick="jumpTab('s6')"><span class="wk-ic">🏥</span><span class="wk-num">Semana 6 · Capítulo 6</span><b>En el consultorio</b><span class="wk-sub">roles y departamentos · admisión · procedimientos · mandatos · direcciones · preposiciones</span></button>
+        <button type="button" class="wk-card" onclick="jumpTab('s7')"><span class="wk-ic">🩺</span><span class="wk-num">Semana 7 · Capítulo 7</span><b>Terminología médica</b><span class="wk-sub">cognados · especialidades · falsos amigos · palabra del paciente vs. término clínico</span></button>
+        <button type="button" class="wk-card" onclick="jumpTab('s8')"><span class="wk-ic">🥗</span><span class="wk-num">Semana 8 · Capítulo 8</span><b>Comida y nutrición</b><span class="wk-sub">grupos de alimentos · dietas · alergias · hábitos · consejos con respeto cultural</span></button>
+        <button type="button" class="wk-card" onclick="jumpTab('s9')"><span class="wk-ic">📋</span><span class="wk-num">Semana 9 · Capítulo 9</span><b>Formularios y papeleo</b><span class="wk-sub">¿cuál o qué? · números grandes · fechas y horas · citas · ayudar con el formulario · dos apellidos</span></button>
+        <div class="wk-card mid"><span class="wk-ic">📝</span><span class="wk-num">Semana 5</span><b>Examen parcial</b><span class="wk-sub">Review of Capítulos 1 a 4: their tabs are here too.</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Errores comunes en el examen <span class="pill">TOP 6</span></div>
+      <div class="obj-grid">
+        <div class="obj"><span class="obj-num">1</span><span class="obj-text">Using <em>tú</em> with patients: <em>¿Cómo te llamas?</em> → <strong>¿Cómo se llama usted?</strong></span></div>
+        <div class="obj"><span class="obj-num">2</span><span class="obj-text">doler: <em>Me duele los pies</em> → <strong>Me duelen los pies.</strong></span></div>
+        <div class="obj"><span class="obj-num">3</span><span class="obj-text">Commands: <em>Toma la medicina</em> (tú) → <strong>Tome la medicina</strong> (usted).</span></div>
+        <div class="obj"><span class="obj-num">4</span><span class="obj-text">Age with ser: <em>Es 45 años</em> → <strong>Tiene 45 años.</strong></span></div>
+        <div class="obj"><span class="obj-num">5</span><span class="obj-text"><em>a el</em> → <strong>al</strong>: <em>alergia al maní, al lado del laboratorio</em>.</span></div>
+        <div class="obj"><span class="obj-num">6</span><span class="obj-text"><em>¿Qué es su nombre?</em> → <strong>¿Cuál es su nombre?</strong></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SEMANA 1 ═══ -->
+  <section class="sec" id="sec-s1">
+    <h2 class="sec-title">👋 Semana 1 · Capítulo 1 · Primeras palabras</h2>
+    <p class="sec-sub">saludos · ser · llamarse · usted vs. tú · el alfabeto · preguntas personales</p>
+    <div class="ch-intro">
+      <div class="label">1 · El tema</div>
+      <h2>Primeras palabras</h2>
+      <p>The first minute with a patient: greet, introduce yourself, choose <strong>usted</strong> or <strong>tú</strong>, and ask for basic personal information. These phrases appear in every role-play on the exam.</p>
+    </div>
+    <div class="gbox">
+      <h3><span class="num">G1</span>Saludos y despedidas</h3>
+      <p class="sub">Choose the greeting by the time of day; use formal phrases with patients.</p>
+      <table class="conj-table">
+        <tbody>
+          <tr><td class="accent">Buenos días.</td><td>Good morning (until noon).</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('Buenos días.')">🔊</button></td></tr>
+          <tr><td class="accent">Buenas tardes. · Buenas noches.</td><td>Good afternoon. · Good evening / night.</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('Buenas tardes. , Buenas noches.')">🔊</button></td></tr>
+          <tr><td class="accent">Mucho gusto. · Encantado / Encantada.</td><td>Nice to meet you.</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('Mucho gusto. , Encantado ,  Encantada.')">🔊</button></td></tr>
+          <tr><td class="accent">¿Cómo está usted?</td><td>How are you? (formal)</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('¿Cómo está usted?')">🔊</button></td></tr>
+          <tr><td class="accent">Hasta luego. · Que se mejore.</td><td>See you later. · Get well soon.</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('Hasta luego. , Que se mejore.')">🔊</button></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="gbox alt">
+      <h3><span class="num">G2</span>Ser y llamarse</h3>
+      <p class="sub">Ser = to be (identity, profession, origin). Llamarse = to be called. With a profession, no article: <em>Soy enfermera.</em></p>
+      <table class="conj-table">
+        <tbody>
+          <tr><td class="accent">yo soy · me llamo</td><td>I am · my name is</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('yo soy , me llamo')">🔊</button></td></tr>
+          <tr><td class="accent">tú eres · te llamas</td><td>you are (informal)</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('tú eres , te llamas')">🔊</button></td></tr>
+          <tr><td class="accent">usted es · se llama</td><td>you are (formal)</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('usted es , se llama')">🔊</button></td></tr>
+          <tr><td class="accent">él / ella es · se llama</td><td>he / she is</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('él ,  ella es , se llama')">🔊</button></td></tr>
+          <tr><td class="accent">nosotros somos · nos llamamos</td><td>we are</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('nosotros somos , nos llamamos')">🔊</button></td></tr>
+          <tr><td class="accent">ustedes son · se llaman</td><td>you all are</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('ustedes son , se llaman')">🔊</button></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="gbox alt2">
+      <h3><span class="num">G3</span>Usted vs. tú y preguntas personales</h3>
+      <p class="sub"><strong>Usted</strong> with adult patients; <strong>tú</strong> with children and friends. Usted takes the él / ella verb form and <em>su</em>.</p>
+      <table class="conj-table">
+        <tbody>
+          <tr><td class="accent">¿Cómo se llama usted?</td><td>What is your name?</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('¿Cómo se llama usted?')">🔊</button></td></tr>
+          <tr><td class="accent">¿De dónde es usted?</td><td>Where are you from?</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('¿De dónde es usted?')">🔊</button></td></tr>
+          <tr><td class="accent">¿Cómo se escribe su apellido?</td><td>How do you spell your last name?</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('¿Cómo se escribe su apellido?')">🔊</button></td></tr>
+          <tr><td class="accent">¿Cuál es su número de teléfono?</td><td>What is your phone number?</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('¿Cuál es su número de teléfono?')">🔊</button></td></tr>
+        </tbody>
+      </table>
+      <div class="ojo"><div class="ojo-title">¡OJO! · el alfabeto</div><p>Spell names with letter names: <em>a, be, ce, de, e, efe, ge, hache, i, jota, ka, ele, eme, ene, eñe, o, pe, cu, erre, ese, te, u, uve, uve doble, equis, ye, zeta</em>. López = <em>ele, o, pe, e, zeta</em>.</p></div>
+    </div>
+    <div class="card">
+      <div class="card-title">3 · Vocabulario clave <span class="pill">TAP TO HEAR</span></div>
+      <div class="vchips">
+        <button type="button" class="vchip" onclick="speak('Buenos días')"><b>Buenos días</b><span>good morning</span></button>
+        <button type="button" class="vchip" onclick="speak('Mucho gusto')"><b>Mucho gusto</b><span>nice to meet you</span></button>
+        <button type="button" class="vchip" onclick="speak('el ,  la paciente')"><b>el / la paciente</b><span>patient</span></button>
+        <button type="button" class="vchip" onclick="speak('el enfermero ,  la enfermera')"><b>el enfermero / la enfermera</b><span>nurse</span></button>
+        <button type="button" class="vchip" onclick="speak('el médico ,  la médica')"><b>el médico / la médica</b><span>doctor</span></button>
+        <button type="button" class="vchip" onclick="speak('el nombre')"><b>el nombre</b><span>first name</span></button>
+        <button type="button" class="vchip" onclick="speak('el apellido')"><b>el apellido</b><span>last name</span></button>
+        <button type="button" class="vchip" onclick="speak('¿Cómo se llama?')"><b>¿Cómo se llama?</b><span>what is your name?</span></button>
+        <button type="button" class="vchip" onclick="speak('¿De dónde es?')"><b>¿De dónde es?</b><span>where are you from?</span></button>
+        <button type="button" class="vchip" onclick="speak('Hasta luego')"><b>Hasta luego</b><span>see you later</span></button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">4A · Práctica: complete <span class="pill">6 ITEMS</span></div>
+      <p style="font-size:0.92rem;color:var(--text-light);margin-bottom:14px;">Write the missing word. Accents and capital letters are optional.</p>
+      <div class="ex-item"><span class="ex-num">1</span><span class="ex-text">Son las 9 de la mañana: «Buenos <input class="blk" id="w1_1" data-answer="días" placeholder="___">, señora.» <span class="ex-hint">(good morning)</span></span></div>
+      <div class="ex-item"><span class="ex-num">2</span><span class="ex-text">Yo <input class="blk" id="w1_2" data-answer="soy" placeholder="___"> enfermera. <span class="ex-hint">(ser)</span></span></div>
+      <div class="ex-item"><span class="ex-num">3</span><span class="ex-text">Usted <input class="blk" id="w1_3" data-answer="es" placeholder="___"> el doctor Ruiz, ¿verdad? <span class="ex-hint">(ser)</span></span></div>
+      <div class="ex-item"><span class="ex-num">4</span><span class="ex-text">¿Cómo se <input class="blk" id="w1_4" data-answer="llama" placeholder="___"> usted? <span class="ex-hint">(llamarse)</span></span></div>
+      <div class="ex-item"><span class="ex-num">5</span><span class="ex-text">Me <input class="blk" id="w1_5" data-answer="llamo" placeholder="___"> Ana Torres. <span class="ex-hint">(llamarse)</span></span></div>
+      <div class="ex-item"><span class="ex-num">6</span><span class="ex-text">Mucho <input class="blk" id="w1_6" data-answer="gusto" placeholder="___">, señor. <span class="ex-hint">(nice to meet you)</span></span></div>
+      <button class="chk-btn" onclick="checkBlanks('w1_1,w1_2,w1_3,w1_4,w1_5,w1_6','rsB1')">Check Answers</button>
+      <button class="rst-btn" onclick="resetBlanks('w1_1,w1_2,w1_3,w1_4,w1_5,w1_6','rsB1')">Reset</button>
+      <div class="res-msg" id="rsB1" aria-live="polite"></div>
+    </div>
+    <div class="card">
+      <div class="card-title">4B · Práctica: opción múltiple <span class="pill">8 PREGUNTAS</span></div>
+      <div id="mcW1"></div>
+      <button class="chk-btn" onclick="checkMCset('w1','rsM1')">Score</button>
+      <button class="rst-btn" onclick="resetMCset('w1','rsM1')">Reset</button>
+      <div class="res-msg" id="rsM1" aria-live="polite"></div>
+    </div>
+    <div class="card">
+      <div class="card-title">4C · Diga en voz alta <span class="pill">PRÁCTICA ORAL</span></div>
+      <p style="font-size:0.9rem;color:var(--text-light);margin-bottom:10px;">Say each one out loud first. Then open the model and compare. (Not graded.)</p>
+      <div class="say"><span class="ex-num">1</span><div><p>Greet an adult patient in the afternoon and introduce yourself (name and job).</p><details><summary>Ver el modelo</summary><p><em>Buenas tardes. Me llamo Ana y soy la enfermera.</em> <button type="button" class="play-btn" onclick="speak('Buenas tardes. Me llamo Ana y soy la enfermera.')">🔊</button></p></details></div></div>
+      <div class="say"><span class="ex-num">2</span><div><p>Ask the patient's name and how to spell the last name.</p><details><summary>Ver el modelo</summary><p><em>¿Cómo se llama usted? ¿Cómo se escribe su apellido?</em> <button type="button" class="play-btn" onclick="speak('¿Cómo se llama usted? ¿Cómo se escribe su apellido?')">🔊</button></p></details></div></div>
+      <div class="say"><span class="ex-num">3</span><div><p>Spell your own last name out loud.</p><details><summary>Ver el modelo</summary><p><em>Ej.: Torres: te, o, erre, erre, e, ese.</em> <button type="button" class="play-btn" onclick="speak('Ej.: Torres: te, o, erre, erre, e, ese.')">🔊</button></p></details></div></div>
+    </div>
+    <p class="next-wk"><a href="#" onclick="jumpTab('s2');return false;">Siguiente: Semana 2 →</a></p>
+  </section>
+
+  <!-- ═══ SEMANA 2 ═══ -->
+  <section class="sec" id="sec-s2">
+    <h2 class="sec-title">🙏 Semana 2 · Capítulo 2 · Cortesía y mandatos</h2>
+    <p class="sec-sub">expresiones de cortesía · mandatos formales · negativos · tú y ustedes</p>
+    <div class="ch-intro">
+      <div class="label">1 · El tema</div>
+      <h2>Cortesía y mandatos</h2>
+      <p>How to tell a patient what to do, <strong>politely</strong>. Formal commands (usted) are the most-used grammar in the whole course: you will need them in Capítulos 6, 8 and 9 too.</p>
+    </div>
+    <div class="gbox">
+      <h3><span class="num">G1</span>Expresiones de cortesía</h3>
+      <p class="sub">Soften every instruction.</p>
+      <table class="conj-table">
+        <tbody>
+          <tr><td class="accent">Por favor. · Gracias. · De nada.</td><td>Please. · Thank you. · You're welcome.</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('Por favor. , Gracias. , De nada.')">🔊</button></td></tr>
+          <tr><td class="accent">Con permiso.</td><td>Excuse me (before an action: entering, touching).</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('Con permiso.')">🔊</button></td></tr>
+          <tr><td class="accent">Disculpe. · Perdón.</td><td>Excuse me / sorry (to get attention, small mistakes).</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('Disculpe. , Perdón.')">🔊</button></td></tr>
+          <tr><td class="accent">Lo siento.</td><td>I'm sorry (sympathy).</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('Lo siento.')">🔊</button></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="gbox alt">
+      <h3><span class="num">G2</span>Mandatos formales (usted)</h3>
+      <p class="sub">yo form → drop -o → "opposite" vowel (-ar → -e · -er/-ir → -a).</p>
+      <table class="conj-table">
+        <tbody>
+          <tr><td class="accent">tomar → tomo → Tome la medicina.</td><td>Take the medicine.</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('tomar ,  tomo ,  Tome la medicina.')">🔊</button></td></tr>
+          <tr><td class="accent">abrir → abro → Abra la boca.</td><td>Open your mouth.</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('abrir ,  abro ,  Abra la boca.')">🔊</button></td></tr>
+          <tr><td class="accent">tener → tengo → Tenga cuidado.</td><td>Be careful.</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('tener ,  tengo ,  Tenga cuidado.')">🔊</button></td></tr>
+          <tr><td class="accent">llegar → Llegue · tocar → Toque · empezar → Empiece</td><td>-gar → -gue · -car → -que · -zar → -ce</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('llegar ,  Llegue , tocar ,  Toque , empezar ,  Empiece')">🔊</button></td></tr>
+          <tr><td class="accent">ir → Vaya · ser → Sea · estar → Esté · dar → Dé · saber → Sepa</td><td>irregular</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('ir ,  Vaya , ser ,  Sea , estar ,  Esté , dar ,  Dé , saber ,  Sepa')">🔊</button></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="gbox alt2">
+      <h3><span class="num">G3</span>Reflexivos, negativos, tú y ustedes</h3>
+      <p class="sub">Affirmative: pronoun attached + accent. Negative: pronoun before the verb.</p>
+      <table class="conj-table">
+        <tbody>
+          <tr><td class="accent">Siéntese. · Acuéstese. · Quítese los zapatos.</td><td>Sit down. · Lie down. · Take off your shoes.</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('Siéntese. , Acuéstese. , Quítese los zapatos.')">🔊</button></td></tr>
+          <tr><td class="accent">No se mueva. · No coma nada.</td><td>Don't move. · Don't eat anything.</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('No se mueva. , No coma nada.')">🔊</button></td></tr>
+          <tr><td class="accent">Tú (child): Abre la boca. · No comas dulces.</td><td>informal commands</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('Tú (child): Abre la boca. , No comas dulces.')">🔊</button></td></tr>
+          <tr><td class="accent">Ustedes (group): Siéntense, por favor.</td><td>plural commands</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('Ustedes (group): Siéntense, por favor.')">🔊</button></td></tr>
+        </tbody>
+      </table>
+      <div class="ojo"><div class="ojo-title">¡OJO! · el acento</div><p>When you attach a pronoun, keep the stress and add an accent: <em>siente → siéntese · acueste → acuéstese</em>.</p></div>
+    </div>
+    <div class="card">
+      <div class="card-title">3 · Vocabulario clave <span class="pill">TAP TO HEAR</span></div>
+      <div class="vchips">
+        <button type="button" class="vchip" onclick="speak('Con permiso')"><b>Con permiso</b><span>excuse me (before acting)</span></button>
+        <button type="button" class="vchip" onclick="speak('Disculpe')"><b>Disculpe</b><span>excuse me / sorry</span></button>
+        <button type="button" class="vchip" onclick="speak('Lo siento')"><b>Lo siento</b><span>I'm sorry</span></button>
+        <button type="button" class="vchip" onclick="speak('Siéntese')"><b>Siéntese</b><span>sit down</span></button>
+        <button type="button" class="vchip" onclick="speak('Acuéstese')"><b>Acuéstese</b><span>lie down</span></button>
+        <button type="button" class="vchip" onclick="speak('Respire profundo')"><b>Respire profundo</b><span>take a deep breath</span></button>
+        <button type="button" class="vchip" onclick="speak('No se mueva')"><b>No se mueva</b><span>don't move</span></button>
+        <button type="button" class="vchip" onclick="speak('Tome')"><b>Tome</b><span>take (it)</span></button>
+        <button type="button" class="vchip" onclick="speak('Abra la boca')"><b>Abra la boca</b><span>open your mouth</span></button>
+        <button type="button" class="vchip" onclick="speak('Espere aquí')"><b>Espere aquí</b><span>wait here</span></button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">4A · Práctica: complete <span class="pill">6 ITEMS</span></div>
+      <p style="font-size:0.92rem;color:var(--text-light);margin-bottom:14px;">Write the missing word. Accents and capital letters are optional.</p>
+      <div class="ex-item"><span class="ex-num">1</span><span class="ex-text"><input class="blk" id="w2_1" data-answer="Abra" placeholder="___"> la boca, por favor. <span class="ex-hint">(abrir · usted)</span></span></div>
+      <div class="ex-item"><span class="ex-num">2</span><span class="ex-text"><input class="blk" id="w2_2" data-answer="Tome" placeholder="___"> la medicina con agua. <span class="ex-hint">(tomar · usted)</span></span></div>
+      <div class="ex-item"><span class="ex-num">3</span><span class="ex-text"><input class="blk" id="w2_3" data-answer="Siéntese" placeholder="___"> aquí, por favor. <span class="ex-hint">(sentarse · usted)</span></span></div>
+      <div class="ex-item"><span class="ex-num">4</span><span class="ex-text">No se <input class="blk" id="w2_4" data-answer="mueva" placeholder="___">, por favor. <span class="ex-hint">(moverse · negative)</span></span></div>
+      <div class="ex-item"><span class="ex-num">5</span><span class="ex-text"><input class="blk" id="w2_5" data-answer="Llegue" placeholder="___"> temprano a su cita. <span class="ex-hint">(llegar · usted)</span></span></div>
+      <div class="ex-item"><span class="ex-num">6</span><span class="ex-text">Usted entra al cuarto: «Con <input class="blk" id="w2_6" data-answer="permiso" placeholder="___">.» <span class="ex-hint">(courtesy)</span></span></div>
+      <button class="chk-btn" onclick="checkBlanks('w2_1,w2_2,w2_3,w2_4,w2_5,w2_6','rsB2')">Check Answers</button>
+      <button class="rst-btn" onclick="resetBlanks('w2_1,w2_2,w2_3,w2_4,w2_5,w2_6','rsB2')">Reset</button>
+      <div class="res-msg" id="rsB2" aria-live="polite"></div>
+    </div>
+    <div class="card">
+      <div class="card-title">4B · Práctica: opción múltiple <span class="pill">8 PREGUNTAS</span></div>
+      <div id="mcW2"></div>
+      <button class="chk-btn" onclick="checkMCset('w2','rsM2')">Score</button>
+      <button class="rst-btn" onclick="resetMCset('w2','rsM2')">Reset</button>
+      <div class="res-msg" id="rsM2" aria-live="polite"></div>
+    </div>
+    <div class="card">
+      <div class="card-title">4C · Diga en voz alta <span class="pill">PRÁCTICA ORAL</span></div>
+      <p style="font-size:0.9rem;color:var(--text-light);margin-bottom:10px;">Say each one out loud first. Then open the model and compare. (Not graded.)</p>
+      <div class="say"><span class="ex-num">1</span><div><p>Enter a patient's room politely and ask them to sit down.</p><details><summary>Ver el modelo</summary><p><em>Con permiso. Siéntese aquí, por favor.</em> <button type="button" class="play-btn" onclick="speak('Con permiso. Siéntese aquí, por favor.')">🔊</button></p></details></div></div>
+      <div class="say"><span class="ex-num">2</span><div><p>Give three instructions for a check-up, one negative.</p><details><summary>Ver el modelo</summary><p><em>Respire profundo. Abra la boca. No se mueva.</em> <button type="button" class="play-btn" onclick="speak('Respire profundo. Abra la boca. No se mueva.')">🔊</button></p></details></div></div>
+      <div class="say"><span class="ex-num">3</span><div><p>Tell a child (tú) to open their mouth.</p><details><summary>Ver el modelo</summary><p><em>Abre la boca, por favor.</em> <button type="button" class="play-btn" onclick="speak('Abre la boca, por favor.')">🔊</button></p></details></div></div>
+    </div>
+    <p class="next-wk"><a href="#" onclick="jumpTab('s3');return false;">Siguiente: Semana 3 →</a></p>
+  </section>
+
+  <!-- ═══ SEMANA 3 ═══ -->
+  <section class="sec" id="sec-s3">
+    <h2 class="sec-title">🚑 Semana 3 · Capítulo 3 · Emergencias</h2>
+    <p class="sec-sub">pedir y ofrecer ayuda · hay, tiene, está, no puede · números 0 a 100 · la edad</p>
+    <div class="ch-intro">
+      <div class="label">1 · El tema</div>
+      <h2>Emergencias</h2>
+      <p>In an emergency, Spanish is <strong>short and clear</strong>: one idea per question. Four verbs do most of the work: <strong>hay, tiene, está, no puede</strong>. Numbers matter for ages, addresses and doses.</p>
+    </div>
+    <div class="gbox">
+      <h3><span class="num">G1</span>Pedir y ofrecer ayuda</h3>
+      <table class="conj-table">
+        <tbody>
+          <tr><td class="accent">¡Ayuda! · ¡Auxilio!</td><td>Help!</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('¡Ayuda! , ¡Auxilio!')">🔊</button></td></tr>
+          <tr><td class="accent">¿Le puedo ayudar? · ¿Necesita ayuda?</td><td>Can I help you? · Do you need help?</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('¿Le puedo ayudar? , ¿Necesita ayuda?')">🔊</button></td></tr>
+          <tr><td class="accent">Soy enfermero/a. · Llame al 911.</td><td>I'm a nurse. · Call 911.</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('Soy enfermero, a. , Llame al 911.')">🔊</button></td></tr>
+          <tr><td class="accent">¿Qué pasó? · ¿Dónde está?</td><td>What happened? · Where are you / is he?</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('¿Qué pasó? , ¿Dónde está?')">🔊</button></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="gbox alt">
+      <h3><span class="num">G2</span>hay · tiene · está · no puede</h3>
+      <p class="sub">Each one answers a different question.</p>
+      <table class="conj-table">
+        <tbody>
+          <tr><td class="accent">¿Hay sangre? · Hay dos heridos.</td><td>there is / there are</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('¿Hay sangre? , Hay dos heridos.')">🔊</button></td></tr>
+          <tr><td class="accent">Tiene 45 años. · Tiene fiebre.</td><td>age and symptoms → tener</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('Tiene 45 años. , Tiene fiebre.')">🔊</button></td></tr>
+          <tr><td class="accent">Está inconsciente. · Está en el baño.</td><td>condition and location → estar</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('Está inconsciente. , Está en el baño.')">🔊</button></td></tr>
+          <tr><td class="accent">No puede respirar. · No puede caminar.</td><td>can't + infinitive</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('No puede respirar. , No puede caminar.')">🔊</button></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="gbox alt2">
+      <h3><span class="num">G3</span>Los números 0 a 100</h3>
+      <p class="sub">You need them for age, addresses, phone numbers and doses.</p>
+      <table class="conj-table">
+        <tbody>
+          <tr><td class="accent">0 cero · 15 quince · 16 dieciséis</td><td></td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('0 cero , 15 quince , 16 dieciséis')">🔊</button></td></tr>
+          <tr><td class="accent">21 veintiuno · 30 treinta · 31 treinta y uno</td><td></td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('21 veintiuno , 30 treinta , 31 treinta y uno')">🔊</button></td></tr>
+          <tr><td class="accent">40 cuarenta · 50 cincuenta · 60 sesenta</td><td></td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('40 cuarenta , 50 cincuenta , 60 sesenta')">🔊</button></td></tr>
+          <tr><td class="accent">70 setenta · 80 ochenta · 90 noventa · 100 cien</td><td></td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('70 setenta , 80 ochenta , 90 noventa , 100 cien')">🔊</button></td></tr>
+        </tbody>
+      </table>
+      <div class="ojo"><div class="ojo-title">¡OJO! · la edad</div><p>Age uses <strong>tener</strong>: <em>¿Cuántos años tiene? Tiene ochenta y siete años.</em> Never <em>es 87</em>.</p></div>
+    </div>
+    <div class="card">
+      <div class="card-title">3 · Vocabulario clave <span class="pill">TAP TO HEAR</span></div>
+      <div class="vchips">
+        <button type="button" class="vchip" onclick="speak('¡Ayuda!')"><b>¡Ayuda!</b><span>help!</span></button>
+        <button type="button" class="vchip" onclick="speak('la ambulancia')"><b>la ambulancia</b><span>ambulance</span></button>
+        <button type="button" class="vchip" onclick="speak('la herida')"><b>la herida</b><span>wound</span></button>
+        <button type="button" class="vchip" onclick="speak('la sangre')"><b>la sangre</b><span>blood</span></button>
+        <button type="button" class="vchip" onclick="speak('respirar')"><b>respirar</b><span>to breathe</span></button>
+        <button type="button" class="vchip" onclick="speak('inconsciente')"><b>inconsciente</b><span>unconscious</span></button>
+        <button type="button" class="vchip" onclick="speak('el accidente')"><b>el accidente</b><span>accident</span></button>
+        <button type="button" class="vchip" onclick="speak('la caída')"><b>la caída</b><span>fall</span></button>
+        <button type="button" class="vchip" onclick="speak('¿Qué pasó?')"><b>¿Qué pasó?</b><span>what happened?</span></button>
+        <button type="button" class="vchip" onclick="speak('Llame al 911')"><b>Llame al 911</b><span>call 911</span></button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">4A · Práctica: complete <span class="pill">6 ITEMS</span></div>
+      <p style="font-size:0.92rem;color:var(--text-light);margin-bottom:14px;">Write the missing word. Accents and capital letters are optional.</p>
+      <div class="ex-item"><span class="ex-num">1</span><span class="ex-text">¿<input class="blk" id="w3_1" data-answer="Hay" placeholder="___"> sangre? <span class="ex-hint">(is there)</span></span></div>
+      <div class="ex-item"><span class="ex-num">2</span><span class="ex-text">El paciente no <input class="blk" id="w3_2" data-answer="puede" placeholder="___"> respirar. <span class="ex-hint">(poder)</span></span></div>
+      <div class="ex-item"><span class="ex-num">3</span><span class="ex-text">La señora <input class="blk" id="w3_3" data-answer="está" placeholder="___"> inconsciente. <span class="ex-hint">(condition)</span></span></div>
+      <div class="ex-item"><span class="ex-num">4</span><span class="ex-text">Mi hijo <input class="blk" id="w3_4" data-answer="tiene" placeholder="___"> cinco años. <span class="ex-hint">(age)</span></span></div>
+      <div class="ex-item"><span class="ex-num">5</span><span class="ex-text">47 = cuarenta y <input class="blk" id="w3_5" data-answer="siete" placeholder="___"> <span class="ex-hint">(number)</span></span></div>
+      <div class="ex-item"><span class="ex-num">6</span><span class="ex-text">¡<input class="blk" id="w3_6" data-answer="Llame" placeholder="___"> al 911! <span class="ex-hint">(llamar · usted)</span></span></div>
+      <button class="chk-btn" onclick="checkBlanks('w3_1,w3_2,w3_3,w3_4,w3_5,w3_6','rsB3')">Check Answers</button>
+      <button class="rst-btn" onclick="resetBlanks('w3_1,w3_2,w3_3,w3_4,w3_5,w3_6','rsB3')">Reset</button>
+      <div class="res-msg" id="rsB3" aria-live="polite"></div>
+    </div>
+    <div class="card">
+      <div class="card-title">4B · Práctica: opción múltiple <span class="pill">8 PREGUNTAS</span></div>
+      <div id="mcW3"></div>
+      <button class="chk-btn" onclick="checkMCset('w3','rsM3')">Score</button>
+      <button class="rst-btn" onclick="resetMCset('w3','rsM3')">Reset</button>
+      <div class="res-msg" id="rsM3" aria-live="polite"></div>
+    </div>
+    <div class="card">
+      <div class="card-title">4C · Diga en voz alta <span class="pill">PRÁCTICA ORAL</span></div>
+      <p style="font-size:0.9rem;color:var(--text-light);margin-bottom:10px;">Say each one out loud first. Then open the model and compare. (Not graded.)</p>
+      <div class="say"><span class="ex-num">1</span><div><p>Ask what happened and where the person is.</p><details><summary>Ver el modelo</summary><p><em>¿Qué pasó? ¿Dónde está?</em> <button type="button" class="play-btn" onclick="speak('¿Qué pasó? ¿Dónde está?')">🔊</button></p></details></div></div>
+      <div class="say"><span class="ex-num">2</span><div><p>Ask if the person is breathing and how old he is.</p><details><summary>Ver el modelo</summary><p><em>¿Respira? ¿Cuántos años tiene?</em> <button type="button" class="play-btn" onclick="speak('¿Respira? ¿Cuántos años tiene?')">🔊</button></p></details></div></div>
+      <div class="say"><span class="ex-num">3</span><div><p>Say an address with a number between 40 and 100.</p><details><summary>Ver el modelo</summary><p><em>Ej.: Calle Olympia, número ochenta y siete.</em> <button type="button" class="play-btn" onclick="speak('Ej.: Calle Olympia, número ochenta y siete.')">🔊</button></p></details></div></div>
+    </div>
+    <p class="next-wk"><a href="#" onclick="jumpTab('s4');return false;">Siguiente: Semana 4 →</a></p>
+  </section>
+
+  <!-- ═══ SEMANA 4 ═══ -->
+  <section class="sec" id="sec-s4">
+    <h2 class="sec-title">🦵 Semana 4 · Capítulo 4 · El cuerpo y el dolor</h2>
+    <p class="sec-sub">partes del cuerpo · doler · me, te, le, nos, les · describir y preguntar sobre el dolor</p>
+    <div class="ch-intro">
+      <div class="label">1 · El tema</div>
+      <h2>El cuerpo y el dolor</h2>
+      <p>The pain interview: <strong>where, since when, how much, what kind</strong>. The verb <strong>doler</strong> works like <em>gustar</em>, which is the most common grammar mistake on exams.</p>
+    </div>
+    <div class="gbox">
+      <h3><span class="num">G1</span>El verbo doler</h3>
+      <p class="sub">The body part is the subject: singular → duele, plural → duelen.</p>
+      <table class="conj-table">
+        <tbody>
+          <tr><td class="accent">me duele / me duelen</td><td>my … hurts / hurt</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('me duele ,  me duelen')">🔊</button></td></tr>
+          <tr><td class="accent">te duele / te duelen</td><td>your (tú)</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('te duele ,  te duelen')">🔊</button></td></tr>
+          <tr><td class="accent">le duele / le duelen</td><td>your (usted) · his · her</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('le duele ,  le duelen')">🔊</button></td></tr>
+          <tr><td class="accent">nos duele / nos duelen</td><td>our</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('nos duele ,  nos duelen')">🔊</button></td></tr>
+          <tr><td class="accent">les duele / les duelen</td><td>your (ustedes) · their</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('les duele ,  les duelen')">🔊</button></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="gbox alt">
+      <h3><span class="num">G2</span>Preguntas sobre el dolor</h3>
+      <p class="sub">Use the article with body parts (la cabeza), not su.</p>
+      <table class="conj-table">
+        <tbody>
+          <tr><td class="accent">¿Dónde le duele?</td><td>Where does it hurt?</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('¿Dónde le duele?')">🔊</button></td></tr>
+          <tr><td class="accent">¿Desde cuándo le duele?</td><td>Since when has it hurt?</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('¿Desde cuándo le duele?')">🔊</button></td></tr>
+          <tr><td class="accent">Del uno al diez, ¿cuánto le duele?</td><td>From 1 to 10, how much does it hurt?</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('Del uno al diez, ¿cuánto le duele?')">🔊</button></td></tr>
+          <tr><td class="accent">¿Cómo es el dolor? ¿Agudo, sordo, como ardor?</td><td>Sharp, dull, burning?</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('¿Cómo es el dolor? ¿Agudo, sordo, como ardor?')">🔊</button></td></tr>
+          <tr><td class="accent">Desde ayer. · Hace dos días.</td><td>Since yesterday. · For two days.</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('Desde ayer. , Hace dos días.')">🔊</button></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="gbox alt2">
+      <h3><span class="num">G3</span>Partes del cuerpo</h3>
+      <table class="conj-table">
+        <tbody>
+          <tr><td class="accent">la cabeza · el cuello · el pecho · la espalda · el estómago</td><td>head · neck · chest · back · stomach</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('la cabeza , el cuello , el pecho , la espalda , el estómago')">🔊</button></td></tr>
+          <tr><td class="accent">el brazo · el codo · la muñeca · la mano · el dedo</td><td>arm · elbow · wrist · hand · finger</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('el brazo , el codo , la muñeca , la mano , el dedo')">🔊</button></td></tr>
+          <tr><td class="accent">la pierna · la rodilla · el tobillo · el pie</td><td>leg · knee · ankle · foot</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('la pierna , la rodilla , el tobillo , el pie')">🔊</button></td></tr>
+        </tbody>
+      </table>
+      <div class="ojo"><div class="ojo-title">¡OJO! · a + persona</div><p>To say whose pain: <em>A mi madre le duelen las rodillas.</em> · <em>A Juan le duele la espalda.</em></p></div>
+    </div>
+    <div class="card">
+      <div class="card-title">3 · Vocabulario clave <span class="pill">TAP TO HEAR</span></div>
+      <div class="vchips">
+        <button type="button" class="vchip" onclick="speak('la cabeza')"><b>la cabeza</b><span>head</span></button>
+        <button type="button" class="vchip" onclick="speak('el pecho')"><b>el pecho</b><span>chest</span></button>
+        <button type="button" class="vchip" onclick="speak('la espalda')"><b>la espalda</b><span>back</span></button>
+        <button type="button" class="vchip" onclick="speak('el estómago')"><b>el estómago</b><span>stomach</span></button>
+        <button type="button" class="vchip" onclick="speak('la rodilla')"><b>la rodilla</b><span>knee</span></button>
+        <button type="button" class="vchip" onclick="speak('el tobillo')"><b>el tobillo</b><span>ankle</span></button>
+        <button type="button" class="vchip" onclick="speak('la muñeca')"><b>la muñeca</b><span>wrist</span></button>
+        <button type="button" class="vchip" onclick="speak('el dolor')"><b>el dolor</b><span>pain</span></button>
+        <button type="button" class="vchip" onclick="speak('¿Dónde le duele?')"><b>¿Dónde le duele?</b><span>where does it hurt?</span></button>
+        <button type="button" class="vchip" onclick="speak('¿Desde cuándo?')"><b>¿Desde cuándo?</b><span>since when?</span></button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">4A · Práctica: complete <span class="pill">6 ITEMS</span></div>
+      <p style="font-size:0.92rem;color:var(--text-light);margin-bottom:14px;">Write the missing word. Accents and capital letters are optional.</p>
+      <div class="ex-item"><span class="ex-num">1</span><span class="ex-text">Me <input class="blk" id="w4_1" data-answer="duele" placeholder="___"> la cabeza. <span class="ex-hint">(doler)</span></span></div>
+      <div class="ex-item"><span class="ex-num">2</span><span class="ex-text">A la señora le <input class="blk" id="w4_2" data-answer="duelen" placeholder="___"> los pies. <span class="ex-hint">(doler)</span></span></div>
+      <div class="ex-item"><span class="ex-num">3</span><span class="ex-text">¿Dónde <input class="blk" id="w4_3" data-answer="le" placeholder="___"> duele? (usted) <span class="ex-hint">(pronoun)</span></span></div>
+      <div class="ex-item"><span class="ex-num">4</span><span class="ex-text">¿Desde <input class="blk" id="w4_4" data-answer="cuándo" placeholder="___"> le duele? <span class="ex-hint">(since when)</span></span></div>
+      <div class="ex-item"><span class="ex-num">5</span><span class="ex-text">Me caí y me duele la <input class="blk" id="w4_5" data-answer="rodilla" placeholder="___">. <span class="ex-hint">(knee)</span></span></div>
+      <div class="ex-item"><span class="ex-num">6</span><span class="ex-text">A nosotros nos <input class="blk" id="w4_6" data-answer="duele" placeholder="___"> la espalda. <span class="ex-hint">(doler)</span></span></div>
+      <button class="chk-btn" onclick="checkBlanks('w4_1,w4_2,w4_3,w4_4,w4_5,w4_6','rsB4')">Check Answers</button>
+      <button class="rst-btn" onclick="resetBlanks('w4_1,w4_2,w4_3,w4_4,w4_5,w4_6','rsB4')">Reset</button>
+      <div class="res-msg" id="rsB4" aria-live="polite"></div>
+    </div>
+    <div class="card">
+      <div class="card-title">4B · Práctica: opción múltiple <span class="pill">8 PREGUNTAS</span></div>
+      <div id="mcW4"></div>
+      <button class="chk-btn" onclick="checkMCset('w4','rsM4')">Score</button>
+      <button class="rst-btn" onclick="resetMCset('w4','rsM4')">Reset</button>
+      <div class="res-msg" id="rsM4" aria-live="polite"></div>
+    </div>
+    <div class="card">
+      <div class="card-title">4C · Diga en voz alta <span class="pill">PRÁCTICA ORAL</span></div>
+      <p style="font-size:0.9rem;color:var(--text-light);margin-bottom:10px;">Say each one out loud first. Then open the model and compare. (Not graded.)</p>
+      <div class="say"><span class="ex-num">1</span><div><p>Ask where it hurts, since when, and from 1 to 10.</p><details><summary>Ver el modelo</summary><p><em>¿Dónde le duele? ¿Desde cuándo? Del uno al diez, ¿cuánto le duele?</em> <button type="button" class="play-btn" onclick="speak('¿Dónde le duele? ¿Desde cuándo? Del uno al diez, ¿cuánto le duele?')">🔊</button></p></details></div></div>
+      <div class="say"><span class="ex-num">2</span><div><p>Report to the doctor: the patient's knee has hurt since Saturday, 7 out of 10.</p><details><summary>Ver el modelo</summary><p><em>Doctora, al paciente le duele la rodilla desde el sábado. Es un siete de diez.</em> <button type="button" class="play-btn" onclick="speak('Doctora, al paciente le duele la rodilla desde el sábado. Es un siete de diez.')">🔊</button></p></details></div></div>
+      <div class="say"><span class="ex-num">3</span><div><p>Say that your feet hurt.</p><details><summary>Ver el modelo</summary><p><em>Me duelen los pies.</em> <button type="button" class="play-btn" onclick="speak('Me duelen los pies.')">🔊</button></p></details></div></div>
+    </div>
+    <p class="next-wk"><a href="#" onclick="jumpTab('s6');return false;">Siguiente: Semana 6 →</a></p>
+  </section>
+
+  <!-- ═══ SEMANA 6 ═══ -->
+  <section class="sec" id="sec-s6">
+    <h2 class="sec-title">🏥 Semana 6 · Capítulo 6 · En el consultorio</h2>
+    <p class="sec-sub">roles y departamentos · admisión · procedimientos · mandatos · direcciones · preposiciones</p>
+    <div class="ch-intro">
+      <div class="label">1 · El tema</div>
+      <h2>En el consultorio</h2>
+      <p>Who works where, what happens next, and how to get there. Announce procedures with <strong>voy a + infinitivo</strong>, give instructions with commands, and give directions with <strong>siga, doble, suba</strong> + location words.</p>
+    </div>
+    <div class="gbox">
+      <h3><span class="num">G1</span>Procedimientos: ir a + infinitivo</h3>
+      <p class="sub">The pronoun le can attach to the infinitive.</p>
+      <table class="conj-table">
+        <tbody>
+          <tr><td class="accent">Voy a tomarle la presión.</td><td>I'm going to take your blood pressure.</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('Voy a tomarle la presión.')">🔊</button></td></tr>
+          <tr><td class="accent">Voy a tomarle la temperatura.</td><td>…your temperature.</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('Voy a tomarle la temperatura.')">🔊</button></td></tr>
+          <tr><td class="accent">Voy a ponerle una vacuna.</td><td>I'm going to give you a vaccine.</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('Voy a ponerle una vacuna.')">🔊</button></td></tr>
+          <tr><td class="accent">Súbase a la báscula. · Quítese la camisa.</td><td>Step on the scale. · Take off your shirt.</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('Súbase a la báscula. , Quítese la camisa.')">🔊</button></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="gbox alt">
+      <h3><span class="num">G2</span>Direcciones</h3>
+      <p class="sub">Directions are usted commands.</p>
+      <table class="conj-table">
+        <tbody>
+          <tr><td class="accent">Siga derecho.</td><td>Go straight.</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('Siga derecho.')">🔊</button></td></tr>
+          <tr><td class="accent">Doble a la derecha / a la izquierda.</td><td>Turn right / left.</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('Doble a la derecha ,  a la izquierda.')">🔊</button></td></tr>
+          <tr><td class="accent">Suba al segundo piso. · Baje al primer piso.</td><td>Go up to the 2nd floor. · Go down…</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('Suba al segundo piso. , Baje al primer piso.')">🔊</button></td></tr>
+          <tr><td class="accent">Está al fondo del pasillo.</td><td>It's at the end of the hallway.</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('Está al fondo del pasillo.')">🔊</button></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="gbox alt2">
+      <h3><span class="num">G3</span>Preposiciones de lugar</h3>
+      <p class="sub">Remember de + el = del.</p>
+      <table class="conj-table">
+        <tbody>
+          <tr><td class="accent">al lado de</td><td>next to</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('al lado de')">🔊</button></td></tr>
+          <tr><td class="accent">enfrente de</td><td>across from / in front of</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('enfrente de')">🔊</button></td></tr>
+          <tr><td class="accent">detrás de</td><td>behind</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('detrás de')">🔊</button></td></tr>
+          <tr><td class="accent">entre … y …</td><td>between</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('entre … y …')">🔊</button></td></tr>
+          <tr><td class="accent">cerca de · lejos de</td><td>near · far from</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('cerca de , lejos de')">🔊</button></td></tr>
+        </tbody>
+      </table>
+      <div class="ojo"><div class="ojo-title">¡OJO! · admisión</div><p>Intake questions from this chapter: <em>¿Cuál es su fecha de nacimiento? ¿Tiene seguro médico? ¿Quién es su persona de contacto?</em> They return in Capítulo 9.</p></div>
+    </div>
+    <div class="card">
+      <div class="card-title">3 · Vocabulario clave <span class="pill">TAP TO HEAR</span></div>
+      <div class="vchips">
+        <button type="button" class="vchip" onclick="speak('la recepción')"><b>la recepción</b><span>front desk</span></button>
+        <button type="button" class="vchip" onclick="speak('la sala de espera')"><b>la sala de espera</b><span>waiting room</span></button>
+        <button type="button" class="vchip" onclick="speak('el laboratorio')"><b>el laboratorio</b><span>lab</span></button>
+        <button type="button" class="vchip" onclick="speak('la farmacia')"><b>la farmacia</b><span>pharmacy</span></button>
+        <button type="button" class="vchip" onclick="speak('la presión arterial')"><b>la presión arterial</b><span>blood pressure</span></button>
+        <button type="button" class="vchip" onclick="speak('la báscula')"><b>la báscula</b><span>scale</span></button>
+        <button type="button" class="vchip" onclick="speak('la bata')"><b>la bata</b><span>gown</span></button>
+        <button type="button" class="vchip" onclick="speak('siga derecho')"><b>siga derecho</b><span>go straight</span></button>
+        <button type="button" class="vchip" onclick="speak('doble a la izquierda')"><b>doble a la izquierda</b><span>turn left</span></button>
+        <button type="button" class="vchip" onclick="speak('al lado de')"><b>al lado de</b><span>next to</span></button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">4A · Práctica: complete <span class="pill">6 ITEMS</span></div>
+      <p style="font-size:0.92rem;color:var(--text-light);margin-bottom:14px;">Write the missing word. Accents and capital letters are optional.</p>
+      <div class="ex-item"><span class="ex-num">1</span><span class="ex-text">Voy a <input class="blk" id="w6_1" data-answer="tomarle" placeholder="___"> la presión. <span class="ex-hint">(to take (your))</span></span></div>
+      <div class="ex-item"><span class="ex-num">2</span><span class="ex-text"><input class="blk" id="w6_2" data-answer="Siga" placeholder="___"> derecho por el pasillo. <span class="ex-hint">(go straight)</span></span></div>
+      <div class="ex-item"><span class="ex-num">3</span><span class="ex-text"><input class="blk" id="w6_3" data-answer="Doble" placeholder="___"> a la izquierda. <span class="ex-hint">(turn)</span></span></div>
+      <div class="ex-item"><span class="ex-num">4</span><span class="ex-text">La farmacia está al <input class="blk" id="w6_4" data-answer="lado" placeholder="___"> del laboratorio. <span class="ex-hint">(next to)</span></span></div>
+      <div class="ex-item"><span class="ex-num">5</span><span class="ex-text">Por favor, <input class="blk" id="w6_5" data-answer="quítese" placeholder="___"> la camisa. <span class="ex-hint">(take off · usted)</span></span></div>
+      <div class="ex-item"><span class="ex-num">6</span><span class="ex-text">La sala de espera está <input class="blk" id="w6_6" data-answer="enfrente" placeholder="___"> de la recepción. <span class="ex-hint">(across from)</span></span></div>
+      <button class="chk-btn" onclick="checkBlanks('w6_1,w6_2,w6_3,w6_4,w6_5,w6_6','rsB6')">Check Answers</button>
+      <button class="rst-btn" onclick="resetBlanks('w6_1,w6_2,w6_3,w6_4,w6_5,w6_6','rsB6')">Reset</button>
+      <div class="res-msg" id="rsB6" aria-live="polite"></div>
+    </div>
+    <div class="card">
+      <div class="card-title">4B · Práctica: opción múltiple <span class="pill">8 PREGUNTAS</span></div>
+      <div id="mcW6"></div>
+      <button class="chk-btn" onclick="checkMCset('w6','rsM6')">Score</button>
+      <button class="rst-btn" onclick="resetMCset('w6','rsM6')">Reset</button>
+      <div class="res-msg" id="rsM6" aria-live="polite"></div>
+    </div>
+    <div class="card">
+      <div class="card-title">4C · Diga en voz alta <span class="pill">PRÁCTICA ORAL</span></div>
+      <p style="font-size:0.9rem;color:var(--text-light);margin-bottom:10px;">Say each one out loud first. Then open the model and compare. (Not graded.)</p>
+      <div class="say"><span class="ex-num">1</span><div><p>Announce two procedures with voy a + infinitive.</p><details><summary>Ver el modelo</summary><p><em>Voy a tomarle la presión. Voy a tomarle la temperatura.</em> <button type="button" class="play-btn" onclick="speak('Voy a tomarle la presión. Voy a tomarle la temperatura.')">🔊</button></p></details></div></div>
+      <div class="say"><span class="ex-num">2</span><div><p>Give directions from the front desk to the lab: straight, then left, at the end of the hall.</p><details><summary>Ver el modelo</summary><p><em>Siga derecho y doble a la izquierda. El laboratorio está al fondo del pasillo.</em> <button type="button" class="play-btn" onclick="speak('Siga derecho y doble a la izquierda. El laboratorio está al fondo del pasillo.')">🔊</button></p></details></div></div>
+      <div class="say"><span class="ex-num">3</span><div><p>Ask two intake questions.</p><details><summary>Ver el modelo</summary><p><em>¿Cuál es su fecha de nacimiento? ¿Tiene seguro médico?</em> <button type="button" class="play-btn" onclick="speak('¿Cuál es su fecha de nacimiento? ¿Tiene seguro médico?')">🔊</button></p></details></div></div>
+    </div>
+    <p class="next-wk"><a href="#" onclick="jumpTab('s7');return false;">Siguiente: Semana 7 →</a></p>
+  </section>
+
+  <!-- ═══ SEMANA 7 ═══ -->
+  <section class="sec" id="sec-s7">
+    <h2 class="sec-title">🩺 Semana 7 · Capítulo 7 · Terminología médica</h2>
+    <p class="sec-sub">cognados · especialidades · falsos amigos · palabra del paciente vs. término clínico</p>
+    <div class="ch-intro">
+      <div class="label">1 · El tema</div>
+      <h2>Terminología médica</h2>
+      <p>Many medical words are <strong>cognates</strong>, but some are <strong>false friends</strong>. Patients use everyday words; charts use clinical terms. You need both.</p>
+    </div>
+    <div class="gbox">
+      <h3><span class="num">G1</span>Cognados</h3>
+      <p class="sub">Common patterns from English to Spanish.</p>
+      <table class="conj-table">
+        <tbody>
+          <tr><td class="accent">-tion → -ción</td><td>infection → la infección</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('-tion ,  -ción')">🔊</button></td></tr>
+          <tr><td class="accent">-ty → -dad</td><td>community → la comunidad</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('-ty ,  -dad')">🔊</button></td></tr>
+          <tr><td class="accent">-logy → -logía</td><td>cardiology → la cardiología</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('-logy ,  -logía')">🔊</button></td></tr>
+          <tr><td class="accent">-ous → -oso</td><td>contagious → contagioso</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('-ous ,  -oso')">🔊</button></td></tr>
+          <tr><td class="accent">ph → f · th → t</td><td>pharmacy → la farmacia · therapy → la terapia</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('ph ,  f , th ,  t')">🔊</button></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="gbox alt">
+      <h3><span class="num">G2</span>Especialistas</h3>
+      <p class="sub">-logía → el / la -ólogo/a. Exceptions end in -iatra.</p>
+      <table class="conj-table">
+        <tbody>
+          <tr><td class="accent">la cardiología → el cardiólogo / la cardióloga</td><td>heart</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('la cardiología ,  el cardiólogo ,  la cardióloga')">🔊</button></td></tr>
+          <tr><td class="accent">la dermatología → el / la dermatólogo/a</td><td>skin</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('la dermatología ,  el ,  la dermatólogo, a')">🔊</button></td></tr>
+          <tr><td class="accent">la oftalmología → el / la oftalmólogo/a</td><td>eyes</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('la oftalmología ,  el ,  la oftalmólogo, a')">🔊</button></td></tr>
+          <tr><td class="accent">la pediatría → el / la pediatra</td><td>children</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('la pediatría ,  el ,  la pediatra')">🔊</button></td></tr>
+          <tr><td class="accent">la psiquiatría → el / la psiquiatra</td><td>mental health</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('la psiquiatría ,  el ,  la psiquiatra')">🔊</button></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="gbox alt2">
+      <h3><span class="num">G3</span>Falsos amigos y registro</h3>
+      <table class="conj-table">
+        <tbody>
+          <tr><td class="accent">embarazada = pregnant</td><td>embarrassed = avergonzada</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('embarazada ,  pregnant')">🔊</button></td></tr>
+          <tr><td class="accent">constipado = has a cold</td><td>constipated = estreñido</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('constipado ,  has a cold')">🔊</button></td></tr>
+          <tr><td class="accent">el éxito = success</td><td>exit = la salida</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('el éxito ,  success')">🔊</button></td></tr>
+          <tr><td class="accent">la presión alta → la hipertensión</td><td>patient → clinical</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('la presión alta ,  la hipertensión')">🔊</button></td></tr>
+          <tr><td class="accent">el azúcar alta → la diabetes</td><td>patient → clinical</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('el azúcar alta ,  la diabetes')">🔊</button></td></tr>
+        </tbody>
+      </table>
+      <div class="ojo"><div class="ojo-title">¡OJO! · el acento</div><p>Words ending in -ía carry an accent on the í: <em>cardiología, pediatría</em>. -logía words stress the í; -ólogo words stress the ó.</p></div>
+    </div>
+    <div class="card">
+      <div class="card-title">3 · Vocabulario clave <span class="pill">TAP TO HEAR</span></div>
+      <div class="vchips">
+        <button type="button" class="vchip" onclick="speak('la infección')"><b>la infección</b><span>infection</span></button>
+        <button type="button" class="vchip" onclick="speak('el diagnóstico')"><b>el diagnóstico</b><span>diagnosis</span></button>
+        <button type="button" class="vchip" onclick="speak('el tratamiento')"><b>el tratamiento</b><span>treatment</span></button>
+        <button type="button" class="vchip" onclick="speak('la vacuna')"><b>la vacuna</b><span>vaccine</span></button>
+        <button type="button" class="vchip" onclick="speak('el ,  la cardiólogo, a')"><b>el / la cardiólogo/a</b><span>cardiologist</span></button>
+        <button type="button" class="vchip" onclick="speak('el ,  la pediatra')"><b>el / la pediatra</b><span>pediatrician</span></button>
+        <button type="button" class="vchip" onclick="speak('embarazada')"><b>embarazada</b><span>pregnant</span></button>
+        <button type="button" class="vchip" onclick="speak('estreñido')"><b>estreñido</b><span>constipated</span></button>
+        <button type="button" class="vchip" onclick="speak('la hipertensión')"><b>la hipertensión</b><span>hypertension</span></button>
+        <button type="button" class="vchip" onclick="speak('la radiografía')"><b>la radiografía</b><span>X-ray</span></button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">4A · Práctica: complete <span class="pill">6 ITEMS</span></div>
+      <p style="font-size:0.92rem;color:var(--text-light);margin-bottom:14px;">Write the missing word. Accents and capital letters are optional.</p>
+      <div class="ex-item"><span class="ex-num">1</span><span class="ex-text">infection → la <input class="blk" id="w7_1" data-answer="infección" placeholder="___"> <span class="ex-hint">(cognate)</span></span></div>
+      <div class="ex-item"><span class="ex-num">2</span><span class="ex-text">community → la <input class="blk" id="w7_2" data-answer="comunidad" placeholder="___"> <span class="ex-hint">(cognate)</span></span></div>
+      <div class="ex-item"><span class="ex-num">3</span><span class="ex-text">La especialista del corazón es la <input class="blk" id="w7_3" data-answer="cardióloga" placeholder="___">. <span class="ex-hint">(f.)</span></span></div>
+      <div class="ex-item"><span class="ex-num">4</span><span class="ex-text">El doctor de los niños es el <input class="blk" id="w7_4" data-answer="pediatra" placeholder="___">. <span class="ex-hint">(specialist)</span></span></div>
+      <div class="ex-item"><span class="ex-num">5</span><span class="ex-text">No puede ir al baño. Está <input class="blk" id="w7_5" data-answer="estreñido" placeholder="___">. <span class="ex-hint">(constipated)</span></span></div>
+      <div class="ex-item"><span class="ex-num">6</span><span class="ex-text">«La presión alta» en el expediente: la <input class="blk" id="w7_6" data-answer="hipertensión" placeholder="___">. <span class="ex-hint">(clinical term)</span></span></div>
+      <button class="chk-btn" onclick="checkBlanks('w7_1,w7_2,w7_3,w7_4,w7_5,w7_6','rsB7')">Check Answers</button>
+      <button class="rst-btn" onclick="resetBlanks('w7_1,w7_2,w7_3,w7_4,w7_5,w7_6','rsB7')">Reset</button>
+      <div class="res-msg" id="rsB7" aria-live="polite"></div>
+    </div>
+    <div class="card">
+      <div class="card-title">4B · Práctica: opción múltiple <span class="pill">8 PREGUNTAS</span></div>
+      <div id="mcW7"></div>
+      <button class="chk-btn" onclick="checkMCset('w7','rsM7')">Score</button>
+      <button class="rst-btn" onclick="resetMCset('w7','rsM7')">Reset</button>
+      <div class="res-msg" id="rsM7" aria-live="polite"></div>
+    </div>
+    <div class="card">
+      <div class="card-title">4C · Diga en voz alta <span class="pill">PRÁCTICA ORAL</span></div>
+      <p style="font-size:0.9rem;color:var(--text-light);margin-bottom:10px;">Say each one out loud first. Then open the model and compare. (Not graded.)</p>
+      <div class="say"><span class="ex-num">1</span><div><p>Refer a patient with red spots on the skin to a specialist.</p><details><summary>Ver el modelo</summary><p><em>Necesita ver a la dermatóloga.</em> <button type="button" class="play-btn" onclick="speak('Necesita ver a la dermatóloga.')">🔊</button></p></details></div></div>
+      <div class="say"><span class="ex-num">2</span><div><p>Explain that "embarazada" is a false friend.</p><details><summary>Ver el modelo</summary><p><em>«Embarazada» significa pregnant. Embarrassed es «avergonzada».</em> <button type="button" class="play-btn" onclick="speak('«Embarazada» significa pregnant. Embarrassed es «avergonzada».')">🔊</button></p></details></div></div>
+      <div class="say"><span class="ex-num">3</span><div><p>Say the patient's word and the clinical term for "high sugar".</p><details><summary>Ver el modelo</summary><p><em>El azúcar alta: la diabetes.</em> <button type="button" class="play-btn" onclick="speak('El azúcar alta: la diabetes.')">🔊</button></p></details></div></div>
+    </div>
+    <p class="next-wk"><a href="#" onclick="jumpTab('s8');return false;">Siguiente: Semana 8 →</a></p>
+  </section>
+
+  <!-- ═══ SEMANA 8 ═══ -->
+  <section class="sec" id="sec-s8">
+    <h2 class="sec-title">🥗 Semana 8 · Capítulo 8 · Comida y nutrición</h2>
+    <p class="sec-sub">grupos de alimentos · dietas · alergias · hábitos · consejos con respeto cultural</p>
+    <div class="ch-intro">
+      <div class="label">1 · El tema</div>
+      <h2>Comida y nutrición</h2>
+      <p>Talk about food, diets and allergies, ask about eating habits, and give advice that <strong>respects the patient's culture</strong>: keep the food, change the amount, the type or the drink.</p>
+    </div>
+    <div class="gbox">
+      <h3><span class="num">G1</span>Dietas y alergias</h3>
+      <p class="sub">Alergia a + article. a + el = al.</p>
+      <table class="conj-table">
+        <tbody>
+          <tr><td class="accent">Tengo alergia al maní.</td><td>el maní → al</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('Tengo alergia al maní.')">🔊</button></td></tr>
+          <tr><td class="accent">Soy alérgica a las nueces.</td><td>feminine plural</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('Soy alérgica a las nueces.')">🔊</button></td></tr>
+          <tr><td class="accent">Tiene alergia a los mariscos / a la leche.</td><td></td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('Tiene alergia a los mariscos ,  a la leche.')">🔊</button></td></tr>
+          <tr><td class="accent">Soy vegetariano/a. · una dieta sin sal · baja en azúcar</td><td>bajo / baja agrees with the noun</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('Soy vegetariano, a. , una dieta sin sal , baja en azúcar')">🔊</button></td></tr>
+          <tr><td class="accent">Soy intolerante a la lactosa.</td><td>intolerance ≠ allergy</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('Soy intolerante a la lactosa.')">🔊</button></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="gbox alt">
+      <h3><span class="num">G2</span>Preguntas sobre los hábitos</h3>
+      <p class="sub">tomar for drinks, comer for food.</p>
+      <table class="conj-table">
+        <tbody>
+          <tr><td class="accent">¿Qué come normalmente en el desayuno?</td><td>What do you usually eat for breakfast?</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('¿Qué come normalmente en el desayuno?')">🔊</button></td></tr>
+          <tr><td class="accent">¿Con qué frecuencia come comida rápida?</td><td>How often…?</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('¿Con qué frecuencia come comida rápida?')">🔊</button></td></tr>
+          <tr><td class="accent">¿Cuántos vasos de agua toma al día?</td><td>How many glasses…?</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('¿Cuántos vasos de agua toma al día?')">🔊</button></td></tr>
+          <tr><td class="accent">siempre · a veces · nunca · dos veces a la semana</td><td>frequency</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('siempre , a veces , nunca , dos veces a la semana')">🔊</button></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="gbox alt2">
+      <h3><span class="num">G3</span>Consejos con respeto cultural</h3>
+      <p class="sub">Usted commands + en vez de.</p>
+      <table class="conj-table">
+        <tbody>
+          <tr><td class="accent">Tome agua en vez de refresco.</td><td>instead of</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('Tome agua en vez de refresco.')">🔊</button></td></tr>
+          <tr><td class="accent">Coma dos tortillas de maíz en vez de cuatro de harina.</td><td>change the amount and type</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('Coma dos tortillas de maíz en vez de cuatro de harina.')">🔊</button></td></tr>
+          <tr><td class="accent">Prepare los frijoles de la olla, sin manteca.</td><td>change the preparation</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('Prepare los frijoles de la olla, sin manteca.')">🔊</button></td></tr>
+          <tr><td class="accent">¿Qué comidas son importantes en su familia?</td><td>start with a question</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('¿Qué comidas son importantes en su familia?')">🔊</button></td></tr>
+        </tbody>
+      </table>
+      <div class="ojo"><div class="ojo-title">¡OJO! · los grupos</div><p><em>Frutas, verduras, proteínas, granos, lácteos.</em> Beans are a protein; the tortilla is a grain; sodas are not a food group.</p></div>
+    </div>
+    <div class="card">
+      <div class="card-title">3 · Vocabulario clave <span class="pill">TAP TO HEAR</span></div>
+      <div class="vchips">
+        <button type="button" class="vchip" onclick="speak('las verduras')"><b>las verduras</b><span>vegetables</span></button>
+        <button type="button" class="vchip" onclick="speak('los frijoles')"><b>los frijoles</b><span>beans</span></button>
+        <button type="button" class="vchip" onclick="speak('los lácteos')"><b>los lácteos</b><span>dairy</span></button>
+        <button type="button" class="vchip" onclick="speak('los mariscos')"><b>los mariscos</b><span>shellfish</span></button>
+        <button type="button" class="vchip" onclick="speak('las nueces')"><b>las nueces</b><span>nuts</span></button>
+        <button type="button" class="vchip" onclick="speak('sin sal')"><b>sin sal</b><span>salt-free</span></button>
+        <button type="button" class="vchip" onclick="speak('bajo en azúcar')"><b>bajo en azúcar</b><span>low in sugar</span></button>
+        <button type="button" class="vchip" onclick="speak('la comida rápida')"><b>la comida rápida</b><span>fast food</span></button>
+        <button type="button" class="vchip" onclick="speak('las bebidas azucaradas')"><b>las bebidas azucaradas</b><span>sugary drinks</span></button>
+        <button type="button" class="vchip" onclick="speak('en vez de')"><b>en vez de</b><span>instead of</span></button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">4A · Práctica: complete <span class="pill">6 ITEMS</span></div>
+      <p style="font-size:0.92rem;color:var(--text-light);margin-bottom:14px;">Write the missing word. Accents and capital letters are optional.</p>
+      <div class="ex-item"><span class="ex-num">1</span><span class="ex-text">Mi hijo tiene alergia <input class="blk" id="w8_1" data-answer="al" placeholder="___"> maní. <span class="ex-hint">(a + el)</span></span></div>
+      <div class="ex-item"><span class="ex-num">2</span><span class="ex-text">La paciente es alérgica <input class="blk" id="w8_2" data-answer="a las" placeholder="___"> nueces. <span class="ex-hint">(article)</span></span></div>
+      <div class="ex-item"><span class="ex-num">3</span><span class="ex-text">¿<input class="blk" id="w8_3" data-answer="Cuántos" placeholder="___"> vasos de agua toma al día? <span class="ex-hint">(how many)</span></span></div>
+      <div class="ex-item"><span class="ex-num">4</span><span class="ex-text">¿Con qué <input class="blk" id="w8_4" data-answer="frecuencia" placeholder="___"> come comida rápida? <span class="ex-hint">(how often)</span></span></div>
+      <div class="ex-item"><span class="ex-num">5</span><span class="ex-text">Tome agua en <input class="blk" id="w8_5" data-answer="vez" placeholder="___"> de refresco. <span class="ex-hint">(instead of)</span></span></div>
+      <div class="ex-item"><span class="ex-num">6</span><span class="ex-text">Necesita una dieta <input class="blk" id="w8_6" data-answer="baja" placeholder="___"> en sal. <span class="ex-hint">(agreement)</span></span></div>
+      <button class="chk-btn" onclick="checkBlanks('w8_1,w8_2,w8_3,w8_4,w8_5,w8_6','rsB8')">Check Answers</button>
+      <button class="rst-btn" onclick="resetBlanks('w8_1,w8_2,w8_3,w8_4,w8_5,w8_6','rsB8')">Reset</button>
+      <div class="res-msg" id="rsB8" aria-live="polite"></div>
+    </div>
+    <div class="card">
+      <div class="card-title">4B · Práctica: opción múltiple <span class="pill">8 PREGUNTAS</span></div>
+      <div id="mcW8"></div>
+      <button class="chk-btn" onclick="checkMCset('w8','rsM8')">Score</button>
+      <button class="rst-btn" onclick="resetMCset('w8','rsM8')">Reset</button>
+      <div class="res-msg" id="rsM8" aria-live="polite"></div>
+    </div>
+    <div class="card">
+      <div class="card-title">4C · Diga en voz alta <span class="pill">PRÁCTICA ORAL</span></div>
+      <p style="font-size:0.9rem;color:var(--text-light);margin-bottom:10px;">Say each one out loud first. Then open the model and compare. (Not graded.)</p>
+      <div class="say"><span class="ex-num">1</span><div><p>Ask about food allergies and breakfast.</p><details><summary>Ver el modelo</summary><p><em>¿Tiene alergia a algún alimento? ¿Qué come normalmente en el desayuno?</em> <button type="button" class="play-btn" onclick="speak('¿Tiene alergia a algún alimento? ¿Qué come normalmente en el desayuno?')">🔊</button></p></details></div></div>
+      <div class="say"><span class="ex-num">2</span><div><p>Give one respectful tip about drinks.</p><details><summary>Ver el modelo</summary><p><em>Tome agua natural o agua fresca sin azúcar en vez de refresco.</em> <button type="button" class="play-btn" onclick="speak('Tome agua natural o agua fresca sin azúcar en vez de refresco.')">🔊</button></p></details></div></div>
+      <div class="say"><span class="ex-num">3</span><div><p>Ask which foods are important in the family.</p><details><summary>Ver el modelo</summary><p><em>¿Qué comidas son importantes en su familia?</em> <button type="button" class="play-btn" onclick="speak('¿Qué comidas son importantes en su familia?')">🔊</button></p></details></div></div>
+    </div>
+    <p class="next-wk"><a href="#" onclick="jumpTab('s9');return false;">Siguiente: Semana 9 →</a></p>
+  </section>
+
+  <!-- ═══ SEMANA 9 ═══ -->
+  <section class="sec" id="sec-s9">
+    <h2 class="sec-title">📋 Semana 9 · Capítulo 9 · Formularios y papeleo</h2>
+    <p class="sec-sub">¿cuál o qué? · números grandes · fechas y horas · citas · ayudar con el formulario · dos apellidos</p>
+    <div class="ch-intro">
+      <div class="label">1 · El tema</div>
+      <h2>Formularios y papeleo</h2>
+      <p>The paperwork of a visit: intake forms, insurance, appointments, numbers and dates. One wrong digit or one missing last name can create a second medical record.</p>
+    </div>
+    <div class="gbox">
+      <h3><span class="num">G1</span>¿Cuál o qué?</h3>
+      <p class="sub">Information → ¿Cuál es su…? Definition or + noun → ¿Qué…?</p>
+      <table class="conj-table">
+        <tbody>
+          <tr><td class="accent">¿Cuál es su fecha de nacimiento?</td><td>What is your date of birth?</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('¿Cuál es su fecha de nacimiento?')">🔊</button></td></tr>
+          <tr><td class="accent">¿Cuáles son sus apellidos?</td><td>What are your last names?</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('¿Cuáles son sus apellidos?')">🔊</button></td></tr>
+          <tr><td class="accent">¿Qué es el copago?</td><td>What is a copay? (definition)</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('¿Qué es el copago?')">🔊</button></td></tr>
+          <tr><td class="accent">¿Qué idioma prefiere?</td><td>What language do you prefer?</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('¿Qué idioma prefiere?')">🔊</button></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="gbox alt">
+      <h3><span class="num">G2</span>Números grandes, fechas y horas</h3>
+      <p class="sub">Dates: día / mes / año. Times: a la una · a las dos…</p>
+      <table class="conj-table">
+        <tbody>
+          <tr><td class="accent">100 cien · 101 ciento uno · 500 quinientos</td><td>700 setecientos · 900 novecientos</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('100 cien , 101 ciento uno , 500 quinientos')">🔊</button></td></tr>
+          <tr><td class="accent">1985 mil novecientos ochenta y cinco</td><td>2026 dos mil veintiséis</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('1985 mil novecientos ochenta y cinco')">🔊</button></td></tr>
+          <tr><td class="accent">03/05 = el tres de mayo</td><td>day first in Latin America</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('03, 05 ,  el tres de mayo')">🔊</button></td></tr>
+          <tr><td class="accent">Su cita es el lunes a las diez.</td><td>el + day · a las + time</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('Su cita es el lunes a las diez.')">🔊</button></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="gbox alt2">
+      <h3><span class="num">G3</span>Citas y formularios</h3>
+      <p class="sub">Usted commands; attach pronouns with an accent.</p>
+      <table class="conj-table">
+        <tbody>
+          <tr><td class="accent">Llegue quince minutos antes.</td><td>Arrive 15 minutes early.</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('Llegue quince minutos antes.')">🔊</button></td></tr>
+          <tr><td class="accent">Traiga su tarjeta del seguro.</td><td>Bring your insurance card.</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('Traiga su tarjeta del seguro.')">🔊</button></td></tr>
+          <tr><td class="accent">Escriba su nombre en esta línea. · Marque sí o no.</td><td>Write… · Check…</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('Escriba su nombre en esta línea. , Marque sí o no.')">🔊</button></td></tr>
+          <tr><td class="accent">Fírmelo aquí. · Si no sabe, déjelo en blanco.</td><td>Sign it here. · Leave it blank.</td><td style="width:44px;"><button type="button" class="play-btn" onclick="speak('Fírmelo aquí. , Si no sabe, déjelo en blanco.')">🔊</button></td></tr>
+        </tbody>
+      </table>
+      <div class="ojo"><div class="ojo-title">¡OJO! · los dos apellidos</div><p>Rosa María <strong>Hernández</strong> (paterno) <strong>López</strong> (materno). Ask: <em>¿Cuáles son sus dos apellidos?</em></p></div>
+    </div>
+    <div class="card">
+      <div class="card-title">3 · Vocabulario clave <span class="pill">TAP TO HEAR</span></div>
+      <div class="vchips">
+        <button type="button" class="vchip" onclick="speak('el formulario')"><b>el formulario</b><span>form</span></button>
+        <button type="button" class="vchip" onclick="speak('el expediente')"><b>el expediente</b><span>medical record</span></button>
+        <button type="button" class="vchip" onclick="speak('la cita')"><b>la cita</b><span>appointment</span></button>
+        <button type="button" class="vchip" onclick="speak('la tarjeta del seguro')"><b>la tarjeta del seguro</b><span>insurance card</span></button>
+        <button type="button" class="vchip" onclick="speak('el copago')"><b>el copago</b><span>copay</span></button>
+        <button type="button" class="vchip" onclick="speak('la factura')"><b>la factura</b><span>bill</span></button>
+        <button type="button" class="vchip" onclick="speak('la fecha de nacimiento')"><b>la fecha de nacimiento</b><span>date of birth</span></button>
+        <button type="button" class="vchip" onclick="speak('el estado civil')"><b>el estado civil</b><span>marital status</span></button>
+        <button type="button" class="vchip" onclick="speak('la firma')"><b>la firma</b><span>signature</span></button>
+        <button type="button" class="vchip" onclick="speak('la sala de espera')"><b>la sala de espera</b><span>waiting room</span></button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">4A · Práctica: complete <span class="pill">6 ITEMS</span></div>
+      <p style="font-size:0.92rem;color:var(--text-light);margin-bottom:14px;">Write the missing word. Accents and capital letters are optional.</p>
+      <div class="ex-item"><span class="ex-num">1</span><span class="ex-text">¿<input class="blk" id="w9_1" data-answer="Cuál" placeholder="___"> es su número de teléfono? <span class="ex-hint">(which)</span></span></div>
+      <div class="ex-item"><span class="ex-num">2</span><span class="ex-text">$500 = <input class="blk" id="w9_2" data-answer="quinientos" placeholder="___"> dólares <span class="ex-hint">(number)</span></span></div>
+      <div class="ex-item"><span class="ex-num">3</span><span class="ex-text">03/05 = el tres de <input class="blk" id="w9_3" data-answer="mayo" placeholder="___"> <span class="ex-hint">(month)</span></span></div>
+      <div class="ex-item"><span class="ex-num">4</span><span class="ex-text">Su cita es a la <input class="blk" id="w9_4" data-answer="una" placeholder="___"> de la tarde. <span class="ex-hint">(1:00)</span></span></div>
+      <div class="ex-item"><span class="ex-num">5</span><span class="ex-text">Lea el formulario y <input class="blk" id="w9_5" data-answer="fírmelo" placeholder="___"> aquí. <span class="ex-hint">(sign it)</span></span></div>
+      <div class="ex-item"><span class="ex-num">6</span><span class="ex-text"><input class="blk" id="w9_6" data-answer="Traiga" placeholder="___"> su tarjeta del seguro. <span class="ex-hint">(traer · usted)</span></span></div>
+      <button class="chk-btn" onclick="checkBlanks('w9_1,w9_2,w9_3,w9_4,w9_5,w9_6','rsB9')">Check Answers</button>
+      <button class="rst-btn" onclick="resetBlanks('w9_1,w9_2,w9_3,w9_4,w9_5,w9_6','rsB9')">Reset</button>
+      <div class="res-msg" id="rsB9" aria-live="polite"></div>
+    </div>
+    <div class="card">
+      <div class="card-title">4B · Práctica: opción múltiple <span class="pill">8 PREGUNTAS</span></div>
+      <div id="mcW9"></div>
+      <button class="chk-btn" onclick="checkMCset('w9','rsM9')">Score</button>
+      <button class="rst-btn" onclick="resetMCset('w9','rsM9')">Reset</button>
+      <div class="res-msg" id="rsM9" aria-live="polite"></div>
+    </div>
+    <div class="card">
+      <div class="card-title">4C · Diga en voz alta <span class="pill">PRÁCTICA ORAL</span></div>
+      <p style="font-size:0.9rem;color:var(--text-light);margin-bottom:10px;">Say each one out loud first. Then open the model and compare. (Not graded.)</p>
+      <div class="say"><span class="ex-num">1</span><div><p>Confirm an appointment: Thursday at 2:30.</p><details><summary>Ver el modelo</summary><p><em>Su cita es el jueves a las dos y media.</em> <button type="button" class="play-btn" onclick="speak('Su cita es el jueves a las dos y media.')">🔊</button></p></details></div></div>
+      <div class="say"><span class="ex-num">2</span><div><p>Ask for the patient's two last names and date of birth.</p><details><summary>Ver el modelo</summary><p><em>¿Cuáles son sus dos apellidos? ¿Cuál es su fecha de nacimiento?</em> <button type="button" class="play-btn" onclick="speak('¿Cuáles son sus dos apellidos? ¿Cuál es su fecha de nacimiento?')">🔊</button></p></details></div></div>
+      <div class="say"><span class="ex-num">3</span><div><p>Help with the form: write here, check yes or no, sign it.</p><details><summary>Ver el modelo</summary><p><em>Escriba su nombre aquí. Marque sí o no. Fírmelo, por favor.</em> <button type="button" class="play-btn" onclick="speak('Escriba su nombre aquí. Marque sí o no. Fírmelo, por favor.')">🔊</button></p></details></div></div>
+    </div>
+    <p class="next-wk"><a href="#" onclick="jumpTab('mix');return false;">Siguiente: 🎓 Examen mixto →</a></p>
+  </section>
+
+  <!-- ═══ EXAMEN MIXTO ═══ -->
+  <section class="sec" id="sec-mix">
+    <h2 class="sec-title">🎓 Examen mixto · Practice exam</h2>
+    <p class="sec-sub">20 preguntas al azar de todas las semanas · una nueva versión cada vez</p>
+    <div class="card">
+      <div class="card-title">Examen de práctica <span class="pill">20 PREGUNTAS</span></div>
+      <p class="mix-info" id="mixInfo"></p>
+      <div id="mixCont"></div>
+      <button class="chk-btn" onclick="scoreMix()">Score My Exam</button>
+      <button class="rst-btn" onclick="newMix()">🔀 New Exam</button>
+      <div class="res-msg" id="rsMix" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <div class="footer">
+    SPSCC · Spanish for Healthcare Workers · Repaso para el examen final · Semanas 1 a 9
+  </div>
+
+</div>
+
+<script>
+function switchTab(tab, el){
+  document.querySelectorAll('.tab').forEach(function(b){ b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
+  document.querySelectorAll('.sec').forEach(function(s){ s.classList.remove('active'); });
+  if(el){ el.classList.add('active'); el.setAttribute('aria-selected','true'); }
+  var s = document.getElementById('sec-'+tab); if(s) s.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* ── Helpers ── */
+function normalize(s){ if(!s) return ''; return s.toString().trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[¿?¡!.,;:]/g,'').replace(/\s+/g,' ').trim(); }
+function wordsOf(str){ return normalize(str).split(/\s+/).filter(Boolean); }
+function val(id){ var el=document.getElementById(id); return el?(el.value||'').trim():''; }
+function setMsg(id, ok, text){ var m=document.getElementById(id); if(!m) return; m.textContent=text; m.className='res-msg '+(ok?'ok':'ng'); }
+function showFb(id, ok, msg){ var fb=document.getElementById(id); if(!fb) return; fb.className='task-fb show '+(ok?'ok':'ng'); fb.textContent=(ok?'✓ ':'✗ ')+msg; }
+function clearFb(id){ var fb=document.getElementById(id); if(fb) fb.className='task-fb'; }
+function answersOf(el){ return (el.getAttribute('data-answer')||'').split('|'); }
+function isRight(el){ if(el.getAttribute('data-digits')){ var d=(el.value||'').replace(/\D/g,''); return !!d && d===el.getAttribute('data-answer'); } var v=normalize(el.value); return !!v && answersOf(el).some(function(a){ return normalize(a)===v; }); }
+
+/* ── Speech (device Spanish voice) ── */
+var esVoice = null;
+function pickVoice(){
+  if(!('speechSynthesis' in window)) return;
+  var vs = window.speechSynthesis.getVoices(), pref = ['es-MX','es-US','es-419','es-CO','es-ES'];
+  for(var p=0;p<pref.length;p++){ for(var i=0;i<vs.length;i++){ if(vs[i].lang && vs[i].lang.replace('_','-')===pref[p]){ esVoice=vs[i]; return; } } }
+  for(var j=0;j<vs.length;j++){ if(vs[j].lang && vs[j].lang.toLowerCase().indexOf('es')===0){ esVoice=vs[j]; return; } }
+}
+if('speechSynthesis' in window){ pickVoice(); window.speechSynthesis.onvoiceschanged = pickVoice; }
+function utter(text, rate){
+  var u = new SpeechSynthesisUtterance(text.replace(/…/g,''));
+  u.lang = esVoice ? esVoice.lang : 'es-MX'; if(esVoice) u.voice = esVoice; u.rate = rate || 0.9;
+  return u;
+}
+function speak(texts){
+  try{
+    if(!('speechSynthesis' in window)) return;
+    window.speechSynthesis.cancel();
+    (Array.isArray(texts)?texts:[texts]).forEach(function(t){ if(t) window.speechSynthesis.speak(utter(t)); });
+  }catch(e){}
+}
+function stopSpeech(){ try{ window.speechSynthesis.cancel(); }catch(e){} }
+
+/* ── Flashcards ── */
+
+function checkBlanks(idsCSV, resultId){
+  var ids = idsCSV.split(','), correct = 0, total = ids.length;
+  ids.forEach(function(id){
+    var el = document.getElementById(id); if(!el) return;
+    el.classList.remove('ok','ng');
+    if(isRight(el)){ el.classList.add('ok'); correct++; } else el.classList.add('ng');
+  });
+  var msg = document.getElementById(resultId);
+  if(msg){
+    if(correct===total){ msg.textContent='¡Perfecto! '+correct+' / '+total+' correctas. ✓'; msg.className='res-msg ok'; }
+    else { msg.textContent=correct+' / '+total+' correctas. Revisa las marcadas en rojo.'; msg.className='res-msg ng'; }
+  }
+  updateCompletion();
+}
+function resetBlanks(idsCSV, resultId){
+  idsCSV.split(',').forEach(function(id){ var el=document.getElementById(id); if(el){ el.value=''; el.classList.remove('ok','ng'); } });
+  var msg=document.getElementById(resultId); if(msg){ msg.textContent=''; msg.className='res-msg'; }
+  updateCompletion();
+}
+
+/* ── Multiple-choice engine ── */
+var quizState = {}, MC_SETS = {};
+function buildMC(data, key, containerId){
+  var container = document.getElementById(containerId); if(!container) return;
+  container.innerHTML = '';
+  quizState[key] = data.map(function(){ return null; }); MC_SETS[key] = data;
+  data.forEach(function(item, i){
+    var div = document.createElement('div');
+    div.className = 'quiz-item'; div.id = key+'_item_'+i;
+    var opts = item.options.map(function(opt, j){
+      return '<button type="button" class="quiz-opt" id="'+key+'_'+i+'_'+j+'" onclick="pickMC(\''+key+'\','+i+','+j+')"><span class="letter">'+'ABCD'[j]+'</span><span>'+opt+'</span></button>';
+    }).join('');
+    div.innerHTML = '<div class="quiz-q"><span class="qnum">'+(i+1)+'.</span>'+item.q+'</div><div class="quiz-gloss">'+item.gloss+'</div><div class="quiz-options">'+opts+'</div><div class="quiz-explain" id="'+key+'_exp_'+i+'"></div>';
+    container.appendChild(div);
+  });
+}
+function pickMC(key, i, j){
+  quizState[key][i] = j;
+  MC_SETS[key][i].options.forEach(function(_, k){ document.getElementById(key+'_'+i+'_'+k).classList.toggle('selected', k===j); });
+  updateCompletion();
+}
+function revealMC(key, i){
+  var item = MC_SETS[key][i], chosen = quizState[key][i], ok = chosen===item.answer;
+  item.options.forEach(function(_, j){ var btn=document.getElementById(key+'_'+i+'_'+j); btn.classList.remove('is-correct','is-wrong'); if(j===item.answer) btn.classList.add('is-correct'); else if(j===chosen) btn.classList.add('is-wrong'); });
+  var exp = document.getElementById(key+'_exp_'+i); exp.className='quiz-explain show';
+  exp.innerHTML = '<strong>'+(ok?'✓ ¡Correcto!':'✗ No exactamente.')+'</strong> '+item.explain;
+  document.getElementById(key+'_item_'+i).className='quiz-item '+(ok?'correct':'wrong');
+  return ok;
+}
+function resetMC(key){
+  var data = MC_SETS[key]; quizState[key] = data.map(function(){ return null; });
+  data.forEach(function(item, i){ item.options.forEach(function(_, j){ document.getElementById(key+'_'+i+'_'+j).className='quiz-opt'; }); document.getElementById(key+'_exp_'+i).className='quiz-explain'; document.getElementById(key+'_item_'+i).className='quiz-item'; });
+}
+
+
+function escapeHtml(str){ return (str==null?'':String(str)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
+function stripTags(html){ var dv=document.createElement('div'); dv.innerHTML=html||''; return (dv.textContent||'').replace(/\s+/g,' ').trim(); }
+function reportTable(title, scoreText, groups){
+  var blocks = groups.map(function(g){
+    var rows = g.items.map(function(it){ return '<tr class="'+(it.value?(it.ok?'ok':'bad'):'blank')+'"><td class="num">'+escapeHtml(it.label)+'</td><td>'+(it.value?escapeHtml(it.value):'<span class="blanktxt">(en blanco)</span>')+'</td><td class="note">'+escapeHtml(it.msg||'')+'</td><td class="mark">'+(it.value?(it.ok?'✓':'✗'):'—')+'</td></tr>'; }).join('');
+    return '<h3>'+escapeHtml(g.heading)+'</h3><table><tbody>'+rows+'</tbody></table>';
+  }).join('');
+  return '<h2>'+escapeHtml(title)+'<span class="score">'+escapeHtml(scoreText)+'</span></h2>'+blocks;
+}
+function collectBlanks(prefix, n, heading){
+  var items=[], correct=0;
+  for(var i=1;i<=n;i++){ var el=document.getElementById(prefix+i); if(!el) continue; var v=(el.value||'').trim(); var ok=isRight(el); if(ok) correct++; items.push({ label:String(i), value:v, ok:ok, msg: ok?'Correcto.':'Respuesta: '+answersOf(el).join(' / ') }); }
+  return { heading:heading, items:items, correct:correct, total:items.length };
+}
+function mcReport(data, key){
+  return data.map(function(item, i){ var ch=quizState[key][i]; return { label:String(i+1), value: ch===null?'':stripTags(item.options[ch]), ok: ch===item.answer, msg: ch===item.answer?'Correcto.':'Correcta: '+stripTags(item.options[item.answer]) }; });
+}
+
+var WEEKS = [{"n": 1, "t": "Primeras palabras", "cap": "Capítulo 1", "nb": 6}, {"n": 2, "t": "Cortesía y mandatos", "cap": "Capítulo 2", "nb": 6}, {"n": 3, "t": "Emergencias", "cap": "Capítulo 3", "nb": 6}, {"n": 4, "t": "El cuerpo y el dolor", "cap": "Capítulo 4", "nb": 6}, {"n": 6, "t": "En el consultorio", "cap": "Capítulo 6", "nb": 6}, {"n": 7, "t": "Terminología médica", "cap": "Capítulo 7", "nb": 6}, {"n": 8, "t": "Comida y nutrición", "cap": "Capítulo 8", "nb": 6}, {"n": 9, "t": "Formularios y papeleo", "cap": "Capítulo 9", "nb": 6}];
+var WEEK_MC = {"1": [{"q": "Usted habla con una niña de seis años. ¿Qué forma usa?", "gloss": "You are talking with a six-year-old girl. Which form do you use?", "options": ["usted", "tú", "ustedes", "vosotros"], "answer": 1, "explain": "With children, <strong>tú</strong> is natural and friendly."}, {"q": "¿Cómo se escribe «López»? Ele, o, pe, e, ___", "gloss": "How do you spell \"López\"? L, o, p, e, ___", "options": ["ce", "zeta", "ese", "equis"], "answer": 1, "explain": "z = <strong>zeta</strong>."}, {"q": "El paciente se llama Roberto Díaz Hernández. Su primer apellido es…", "gloss": "The patient's name is Roberto Díaz Hernández. His first last name is…", "options": ["Roberto", "Díaz", "Hernández", "Roberto Díaz"], "answer": 1, "explain": "The father's last name comes first: <strong>Díaz</strong>. File him under Díaz."}, {"q": "¿Cuál oración es correcta?", "gloss": "Which sentence is correct?", "options": ["Soy una enfermera.", "Soy enfermera.", "Es enfermera yo.", "Me llamo enfermera."], "answer": 1, "explain": "No article with professions: <strong>Soy enfermera</strong>."}, {"q": "Son las 9:00 de la mañana. Usted saluda a un paciente con…", "gloss": "It's 9:00 in the morning. You greet a patient with…", "options": ["Buenas tardes", "Buenos días", "Buenas noches", "Hasta luego"], "answer": 1, "explain": "Morning, until noon: <strong>Buenos días</strong>."}, {"q": "«Me llamo Ana. Soy ___ enfermera.»", "gloss": "\"My name is Ana. I am a nurse.\" (profession)", "options": ["una", "la", "—  (nothing)", "un"], "answer": 2, "explain": "With ser + profession, no article: <strong>Soy enfermera.</strong>"}, {"q": "Usted <u>___</u> el doctor Ruiz, ¿verdad?", "gloss": "You ___ Dr. Ruiz, right?", "options": ["eres", "soy", "es", "son"], "answer": 2, "explain": "Usted takes the él / ella form: <strong>usted es</strong>."}, {"q": "Usted no entiende al paciente. Usted dice…", "gloss": "You don't understand the patient. You say…", "options": ["¿Puede repetir, por favor?", "De nada.", "Igualmente.", "Mucho gusto."], "answer": 0, "explain": "<strong>¿Puede repetir, por favor?</strong> Also: <em>Más despacio, por favor.</em>"}], "2": [{"q": "¿Cuál es el mandato negativo correcto (usted)?", "gloss": "negativo", "options": ["No come nada.", "No comer nada.", "No comes nada.", "No coma nada."], "answer": 3, "explain": "Negative usted = <strong>no</strong> + usted command: <em>No coma nada.</em>"}, {"q": "El mandato formal (usted) de «hacer» es…", "gloss": "The formal (usted) command of \"hacer\" is…", "options": ["Hace", "Haga", "Hago", "Haz"], "answer": 1, "explain": "yo <em>hago</em> → <strong>haga</strong>. <em>Haz</em> is the tú command."}, {"q": "El mandato formal de «tener» es…", "gloss": "irregular", "options": ["tenga", "tiene", "tene", "tenge"], "answer": 0, "explain": "Start from <em>yo tengo</em>, drop -o, add -a: <strong>tenga</strong>."}, {"q": "Una familia espera en la sala. Usted dice: «<u>___</u> aquí, por favor.»", "gloss": "A family is waiting in the waiting room. You say: \"___ here, please.\"", "options": ["Siéntese", "Siéntate", "Siéntense", "Sentarse"], "answer": 2, "explain": "A group → ustedes: <strong>Siéntense</strong>."}, {"q": "Usted quiere decirle «Don't move» a un paciente adulto.", "gloss": "You want to tell an adult patient \"Don't move.\"", "options": ["No te muevas.", "No se mueva.", "No muévase.", "No se muevan."], "answer": 1, "explain": "Negative usted: the pronoun goes before the verb: <strong>No se mueva</strong>."}, {"q": "A una familia en la sala de espera: «___ aquí, por favor.»", "gloss": "ustedes", "options": ["Espere", "Espera", "Espero", "Esperen"], "answer": 3, "explain": "For a group, add <strong>-n</strong>: <em>Esperen</em> aquí."}, {"q": "El paciente dice «Muchas gracias». Usted responde…", "gloss": "cortesía", "options": ["Disculpe", "De nada", "Lo siento", "Con permiso"], "answer": 1, "explain": "<strong>De nada</strong> (or <em>con mucho gusto</em>) answers <em>gracias</em>."}, {"q": "El mandato formal (usted) de «respirar» es…", "gloss": "usted · -ar", "options": ["respira", "respiren", "respire", "respiro"], "answer": 2, "explain": "-ar verbs take <strong>-e</strong>: <em>Respire</em> profundo. <em>Respiren</em> is for ustedes; <em>respira</em> is tú."}], "3": [{"q": "El operador pregunta: «¿Dónde está usted?» ¿Cuál es la respuesta lógica?", "gloss": "preguntas urgentes", "options": ["Tengo cuarenta años.", "Me llamo Ana.", "Estoy en la calle Pine, número 45.", "Sí, respira."], "answer": 2, "explain": "<em>¿Dónde?</em> asks for a place: <strong>Estoy en la calle Pine…</strong>"}, {"q": "¿Cuál número es 70?", "gloss": "parejas peligrosas", "options": ["sesenta", "siete", "setenta", "diecisiete"], "answer": 2, "explain": "<strong>Setenta</strong> = 70. <em>Sesenta</em> = 60. Always repeat the number back."}, {"q": "Usted quiere saber la edad del paciente. Pregunta…", "gloss": "You want to know the patient's age. You ask…", "options": ["¿Cuántos años es?", "¿Cuántos años tiene?", "¿Qué edad está?", "¿Cuántos años hay?"], "answer": 1, "explain": "Age uses tener: <strong>¿Cuántos años tiene?</strong>"}, {"q": "¿Cómo se dice 47?", "gloss": "números", "options": ["cuarenta y siete", "catorce y siete", "setenta y cuatro", "cuatro y siete"], "answer": 0, "explain": "40 = cuarenta, + <em>y</em> + siete: <strong>cuarenta y siete</strong>."}, {"q": "«No cuelgue» significa…", "gloss": "mandatos urgentes", "options": ["Don't move", "Don't hang up", "Don't worry", "Don't run"], "answer": 1, "explain": "<em>Colgar</em> = to hang up. The 911 operator says <strong>No cuelgue</strong>."}, {"q": "«¡Socorro!» significa…", "gloss": "vocabulario", "options": ["Sorry!", "Help!", "Careful!", "Hurry!"], "answer": 1, "explain": "<strong>¡Socorro!</strong> (also <em>¡Auxilio!</em>) is a cry for help in real danger."}, {"q": "Mi papá <u>___</u> dolor de pecho.", "gloss": "describir", "options": ["tiene", "está", "hay", "es"], "answer": 0, "explain": "Symptoms use <strong>tener</strong>: <em>Tiene dolor de pecho.</em>"}, {"q": "Usted ve a una señora en el piso. ¿Qué le pregunta primero?", "gloss": "ofrecer ayuda", "options": ["¿Cómo se escribe?", "¿De dónde es usted?", "¿Necesita ayuda?", "¿Habla inglés?"], "answer": 2, "explain": "Offer help first: <strong>¿Necesita ayuda?</strong>"}], "4": [{"q": "¿Cuál es correcto?", "gloss": "el artículo", "options": ["Me duele mi cabeza.", "Me duele la cabeza.", "Yo duelo la cabeza.", "Me duelen la cabeza."], "answer": 1, "explain": "Use the article with body parts and agree with one head: <strong>Me duele la cabeza.</strong>"}, {"q": "Una paciente adulta. Usted pregunta:", "gloss": "registro", "options": ["¿Dónde te duele?", "¿Dónde me duele?", "¿Dónde le duele?", "¿Dónde les duele?"], "answer": 2, "explain": "Usted takes <strong>le</strong>: <em>¿Dónde le duele?</em>"}, {"q": "A mi papá <u>___</u> duele el pecho.", "gloss": "pronombres", "options": ["me", "te", "le", "les"], "answer": 2, "explain": "One third person (él) → <strong>le</strong>: <em>A mi papá le duele el pecho.</em>"}, {"q": "«La rodilla» es…", "gloss": "el cuerpo", "options": ["the elbow", "the knee", "the ankle", "the wrist"], "answer": 1, "explain": "<strong>La rodilla</strong> = knee. Elbow = <em>el codo</em>, ankle = <em>el tobillo</em>."}, {"q": "«Muéstreme dónde le duele» significa…", "gloss": "mandato", "options": ["Tell me why it hurts.", "Show me where it hurts.", "Does it hurt here?", "Point to your head."], "answer": 1, "explain": "<em>Mostrar</em> → <strong>muestre</strong> + <em>me</em>: show me."}, {"q": "Me <u>___</u> las rodillas.", "gloss": "My knees hurt.", "options": ["duele", "duelen", "duelo", "dolor"], "answer": 1, "explain": "<em>Las rodillas</em> is plural → <strong>duelen</strong>."}, {"q": "«El tobillo» es…", "gloss": "\"El tobillo\" is…", "options": ["the wrist", "the elbow", "the ankle", "the hip"], "answer": 2, "explain": "<strong>El tobillo</strong> = ankle. Wrist = <em>la muñeca</em>, elbow = <em>el codo</em>, hip = <em>la cadera</em>."}, {"q": "«Es un dolor agudo» significa…", "gloss": "tipo de dolor", "options": ["It's a sharp pain.", "It's a dull pain.", "It's a burning pain.", "It's a mild pain."], "answer": 0, "explain": "<em>Agudo</em> = sharp. <em>Sordo</em> = dull. <em>Ardor</em> = burning."}], "6": [{"q": "El mandato formal de «ponerse» es…", "gloss": "The formal command of \"ponerse\" is…", "options": ["Ponga", "Póngase", "Pónese", "Se ponga"], "answer": 1, "explain": "yo <em>pongo</em> → <em>ponga</em> + <em>se</em> → <strong>Póngase</strong>."}, {"q": "Para preguntar la fecha de nacimiento, usted dice…", "gloss": "To ask for the date of birth, you say…", "options": ["¿Qué es su fecha de nacimiento?", "¿Cuál es su fecha de nacimiento?", "¿Cuándo es su nacimiento?", "¿Dónde es su fecha de nacimiento?"], "answer": 1, "explain": "For information on a form: <strong>¿Cuál es…?</strong>"}, {"q": "Usted quiere decir: \"I'm going to take your blood pressure.\"", "gloss": "Explain what you are about to do.", "options": ["Tome la presión.", "Voy a tomarle la presión.", "Le duele la presión.", "Tiene que tomar la presión."], "answer": 1, "explain": "<strong>Voy a + infinitivo</strong>: Voy a tomarle la presión."}, {"q": "«Siga derecho» significa…", "gloss": "\"Siga derecho\" means…", "options": ["Turn right.", "Go straight.", "Sit down.", "Go down."], "answer": 1, "explain": "<em>Derecho</em> = straight; <em>derecha</em> = right."}, {"q": "Usted quiere decir: \"Go up to the second floor.\"", "gloss": "You want to say \"Go up to the second floor.\"", "options": ["Baje al segundo piso.", "Suba al segundo piso.", "Siga al segundo piso.", "Doble al segundo piso."], "answer": 1, "explain": "<em>Subir</em> → <strong>Suba</strong>. <em>Baje</em> = go down."}, {"q": "Para recoger su medicina, el paciente va a…", "gloss": "To pick up his medicine, the patient goes to…", "options": ["la farmacia", "radiología", "urgencias", "la recepción"], "answer": 0, "explain": "Medicine → <strong>la farmacia</strong>."}, {"q": "«La sala de espera» es…", "gloss": "\"La sala de espera\" is…", "options": ["the exam room", "the waiting room", "the recovery room", "the pharmacy"], "answer": 1, "explain": "<strong>La sala de espera</strong> = waiting room. Exam room = <em>el consultorio</em>."}, {"q": "«Doble a la izquierda» significa…", "gloss": "\"Doble a la izquierda\" means…", "options": ["Go straight.", "Turn right.", "Turn left.", "Go up."], "answer": 2, "explain": "<em>Doble</em> = turn; <em>izquierda</em> = left."}], "7": [{"q": "«El éxito» significa…", "gloss": "\"El éxito\" means…", "options": ["the exit", "success", "the exam", "the emergency"], "answer": 1, "explain": "<strong>El éxito</strong> = success. Exit = <em>la salida</em>."}, {"q": "El especialista de los niños es…", "gloss": "The children's specialist is…", "options": ["el pediatrólogo", "el pediatra", "el pedíatro", "el niñólogo"], "answer": 1, "explain": "Exception: <strong>el / la pediatra</strong> (like <em>psiquiatra</em>)."}, {"q": "¿Cuál es la sílaba tónica de «cardiología»?", "gloss": "Which is the stressed syllable of \"cardiología\"?", "options": ["CAR", "DIO", "LO", "GÍ"], "answer": 3, "explain": "car·dio·lo·<strong>GÍ</strong>·a: the accent mark on í breaks the vowels."}, {"q": "Usted quiere decir: \"You need to see the cardiologist.\"", "gloss": "Use the terminology in a sentence.", "options": ["Necesita ver al cardiólogo.", "Tiene cardiología.", "Toma el cardiólogo.", "Es cardiología."], "answer": 0, "explain": "<strong>Necesita ver a + especialista</strong>: a + el = al."}, {"q": "«La presión alta» en la historia clínica es…", "gloss": "\"La presión alta\" in the medical chart is…", "options": ["la hipotensión", "la hipertensión", "la diabetes", "el infarto"], "answer": 1, "explain": "Patient word: <em>la presión alta</em> → clinical term: <strong>la hipertensión</strong>."}, {"q": "«La presión arterial» es…", "gloss": "\"La presión arterial\" is…", "options": ["heart rate", "blood pressure", "blood sugar", "cholesterol"], "answer": 1, "explain": "<strong>La presión arterial</strong> = blood pressure."}, {"q": "«Embarazada» significa…", "gloss": "\"Embarazada\" means…", "options": ["embarrassed", "pregnant", "tired", "nauseous"], "answer": 1, "explain": "<strong>Embarazada</strong> = pregnant. Embarrassed = <em>avergonzada</em>."}, {"q": "¿Qué artículo lleva «síntoma»?", "gloss": "Which article goes with \"síntoma\"?", "options": ["la", "el", "las", "los dos"], "answer": 1, "explain": "<strong>El síntoma</strong>: many Greek words in -ma are masculine (el problema, el sistema)."}], "8": [{"q": "Un paciente vegetariano…", "gloss": "A vegetarian patient…", "options": ["no come carne", "no come frutas", "solo come carne", "no toma agua"], "answer": 0, "explain": "<strong>Vegetariano</strong> = doesn't eat meat."}, {"q": "Para preguntar por los hábitos, usted dice…", "gloss": "To ask about habits, you say…", "options": ["¿Qué come normalmente en el desayuno?", "¿Dónde está la cocina?", "¿Cuántos años tiene la comida?", "¿Es usted la comida?"], "answer": 0, "explain": "<strong>¿Qué come normalmente…?</strong>"}, {"q": "Complete: «Mi hijo tiene alergia ___ maní.»", "gloss": "\"My son is allergic to peanuts.\"", "options": ["a el", "al", "a la", "a los"], "answer": 1, "explain": "a + el = <strong>al</strong>."}, {"q": "«Los lácteos» son…", "gloss": "\"Los lácteos\" are…", "options": ["grains", "dairy products", "vegetables", "proteins"], "answer": 1, "explain": "<strong>Los lácteos</strong> = dairy: la leche, el queso, el yogur."}, {"q": "Para la presión alta, el médico recomienda una dieta…", "gloss": "For high blood pressure, the doctor recommends a diet…", "options": ["alta en sal", "baja en sal", "sin agua", "sin verduras"], "answer": 1, "explain": "<strong>Baja en sal</strong> (or <em>sin sal</em>)."}, {"q": "«Soy intolerante a la lactosa» significa…", "gloss": "\"Soy intolerante a la lactosa\" means…", "options": ["I'm allergic to peanuts.", "Milk gives me stomach problems.", "I'm vegetarian.", "I don't eat sugar."], "answer": 1, "explain": "Intolerance (stomach upset) is not the same as an allergy."}, {"q": "Complete: «Tengo alergia ___ nueces.»", "gloss": "\"I'm allergic to nuts.\"", "options": ["a los", "al", "a las", "a la"], "answer": 2, "explain": "<em>Las nueces</em> is feminine plural → <strong>a las nueces</strong>."}, {"q": "«A veces» significa…", "gloss": "\"A veces\" means…", "options": ["always", "never", "sometimes", "twice"], "answer": 2, "explain": "<strong>A veces</strong> = sometimes."}], "9": [{"q": "«Sign it here» (el formulario) es…", "gloss": "\"Sign it here\" (the form) is…", "options": ["Firme aquí.", "Fírmelo aquí.", "Lo firma aquí.", "Fírmela aquí."], "answer": 1, "explain": "<em>El formulario</em> → <strong>lo</strong> → <em>fírmelo</em> (with an accent)."}, {"q": "«1985» se dice…", "gloss": "\"1985\" is said…", "options": ["diecinueve ochenta y cinco", "mil novecientos ochenta y cinco", "un mil nueve ochenta cinco", "mil nueve cientos ochenta y cinco"], "answer": 1, "explain": "<strong>Mil novecientos ochenta y cinco.</strong>"}, {"q": "«Marital status» en un formulario es…", "gloss": "\"Marital status\" on a form is…", "options": ["estatus marital", "estado civil", "estado de matrimonio", "condición familiar"], "answer": 1, "explain": "<strong>Estado civil</strong>: soltero/a, casado/a, divorciado/a, viudo/a."}, {"q": "«1:00 p. m.» se dice…", "gloss": "\"1:00 p.m.\" is said…", "options": ["a las una de la tarde", "a la una de la tarde", "a uno de la tarde", "a las uno de la noche"], "answer": 1, "explain": "Singular: <strong>a la una</strong>."}, {"q": "«El expediente» es…", "gloss": "\"El expediente\" is…", "options": ["the bill", "the medical record", "the waiting room", "the password"], "answer": 1, "explain": "<strong>El expediente (médico)</strong> = the chart / medical record."}, {"q": "«Su cita es ___ lunes ___ las diez.»", "gloss": "\"Your appointment is on Monday at ten.\"", "options": ["en / a", "el / a", "el / en", "en / en"], "answer": 1, "explain": "<strong>el</strong> lunes, <strong>a</strong> las diez."}, {"q": "En un formulario de México, «10/04/2019» es…", "gloss": "On a form from Mexico, \"10/04/2019\" is…", "options": ["October 4, 2019", "April 10, 2019", "April 4, 2019", "October 10, 2019"], "answer": 1, "explain": "Day / month / year → <strong>el diez de abril</strong>."}, {"q": "Usted quiere decir «Bring your insurance card.»", "gloss": "You want to say \"Bring your insurance card.\"", "options": ["Trae tu tarjeta del seguro.", "Traiga su tarjeta del seguro.", "Traer su tarjeta del seguro.", "Traigo su tarjeta del seguro."], "answer": 1, "explain": "traer → <strong>traiga</strong> (usted command)."}]};
+var ALL_BANK = [{"q": "Son las 9:00 de la mañana. Usted saluda a un paciente con…", "gloss": "It's 9:00 in the morning. You greet a patient with…", "options": ["Buenas tardes", "Buenos días", "Buenas noches", "Hasta luego"], "answer": 1, "explain": "Morning, until noon: <strong>Buenos días</strong>.", "cap": 1}, {"q": "Usted <u>___</u> el doctor Ruiz, ¿verdad?", "gloss": "You ___ Dr. Ruiz, right?", "options": ["eres", "soy", "es", "son"], "answer": 2, "explain": "Usted takes the él / ella form: <strong>usted es</strong>.", "cap": 1}, {"q": "¿Cuál oración es correcta?", "gloss": "Which sentence is correct?", "options": ["Soy una enfermera.", "Soy enfermera.", "Es enfermera yo.", "Me llamo enfermera."], "answer": 1, "explain": "No article with professions: <strong>Soy enfermera</strong>.", "cap": 1}, {"q": "El paciente se llama Roberto Díaz Hernández. Su primer apellido es…", "gloss": "The patient's name is Roberto Díaz Hernández. His first last name is…", "options": ["Roberto", "Díaz", "Hernández", "Roberto Díaz"], "answer": 1, "explain": "The father's last name comes first: <strong>Díaz</strong>. File him under Díaz.", "cap": 1}, {"q": "Usted no entiende al paciente. Usted dice…", "gloss": "You don't understand the patient. You say…", "options": ["¿Puede repetir, por favor?", "De nada.", "Igualmente.", "Mucho gusto."], "answer": 0, "explain": "<strong>¿Puede repetir, por favor?</strong> Also: <em>Más despacio, por favor.</em>", "cap": 1}, {"q": "Para preguntar el nombre a un paciente adulto, usted dice…", "gloss": "To ask an adult patient's name, you say…", "options": ["¿Cómo te llamas?", "¿Cómo se llama usted?", "¿Quién eres?", "¿Cómo llamas?"], "answer": 1, "explain": "With patients use <strong>usted</strong>: <em>¿Cómo se llama usted?</em>", "cap": 1}, {"q": "«Me llamo Ana. Soy ___ enfermera.»", "gloss": "\"My name is Ana. I am a nurse.\" (profession)", "options": ["una", "la", "—  (nothing)", "un"], "answer": 2, "explain": "With ser + profession, no article: <strong>Soy enfermera.</strong>", "cap": 1}, {"q": "«Mucho gusto» significa…", "gloss": "\"Mucho gusto\" means…", "options": ["Thank you very much", "Nice to meet you", "See you later", "Excuse me"], "answer": 1, "explain": "<strong>Mucho gusto</strong> = nice to meet you.", "cap": 1}, {"q": "¿Cómo se escribe «López»? Ele, o, pe, e, ___", "gloss": "How do you spell \"López\"? L, o, p, e, ___", "options": ["ce", "zeta", "ese", "equis"], "answer": 1, "explain": "z = <strong>zeta</strong>.", "cap": 1}, {"q": "Usted habla con una niña de seis años. ¿Qué forma usa?", "gloss": "You are talking with a six-year-old girl. Which form do you use?", "options": ["usted", "tú", "ustedes", "vosotros"], "answer": 1, "explain": "With children, <strong>tú</strong> is natural and friendly.", "cap": 1}, {"q": "Antes de tocar al paciente, usted dice…", "gloss": "Before touching the patient, you say…", "options": ["Con permiso.", "De nada.", "Lo siento mucho.", "Igualmente."], "answer": 0, "explain": "<strong>Con permiso</strong> before an action, such as entering or touching.", "cap": 2}, {"q": "El mandato formal (usted) de «tomar» es…", "gloss": "The formal (usted) command of \"tomar\" is…", "options": ["Toma", "Tome", "Tomen", "Tomo"], "answer": 1, "explain": "-AR → -E: <strong>Tome</strong> la medicina. <em>Toma</em> is tú; <em>tomen</em> is ustedes.", "cap": 2}, {"q": "El mandato formal (usted) de «hacer» es…", "gloss": "The formal (usted) command of \"hacer\" is…", "options": ["Hace", "Haga", "Hago", "Haz"], "answer": 1, "explain": "yo <em>hago</em> → <strong>haga</strong>. <em>Haz</em> is the tú command.", "cap": 2}, {"q": "Usted quiere decirle «Don't move» a un paciente adulto.", "gloss": "You want to tell an adult patient \"Don't move.\"", "options": ["No te muevas.", "No se mueva.", "No muévase.", "No se muevan."], "answer": 1, "explain": "Negative usted: the pronoun goes before the verb: <strong>No se mueva</strong>.", "cap": 2}, {"q": "Una familia espera en la sala. Usted dice: «<u>___</u> aquí, por favor.»", "gloss": "A family is waiting in the waiting room. You say: \"___ here, please.\"", "options": ["Siéntese", "Siéntate", "Siéntense", "Sentarse"], "answer": 2, "explain": "A group → ustedes: <strong>Siéntense</strong>.", "cap": 2}, {"q": "Usted entra al cuarto de un paciente. ¿Qué dice?", "gloss": "cortesía", "options": ["Lo siento", "Con permiso", "De nada", "Gracias"], "answer": 1, "explain": "<strong>Con permiso</strong> asks permission before an action, like entering a room.", "cap": 2}, {"q": "El mandato formal (usted) de «respirar» es…", "gloss": "usted · -ar", "options": ["respira", "respiren", "respire", "respiro"], "answer": 2, "explain": "-ar verbs take <strong>-e</strong>: <em>Respire</em> profundo. <em>Respiren</em> is for ustedes; <em>respira</em> is tú.", "cap": 2}, {"q": "¿Cuál es el mandato negativo correcto (usted)?", "gloss": "negativo", "options": ["No come nada.", "No comer nada.", "No comes nada.", "No coma nada."], "answer": 3, "explain": "Negative usted = <strong>no</strong> + usted command: <em>No coma nada.</em>", "cap": 2}, {"q": "«Siéntese» significa…", "gloss": "instrucciones", "options": ["Sit down", "Stand up", "Lie down", "Wait"], "answer": 0, "explain": "<em>Sentarse</em> = to sit down. <em>Levántese</em> = stand up, <em>acuéstese</em> = lie down.", "cap": 2}, {"q": "A un niño de seis años, «Abra la boca» se dice…", "gloss": "tú", "options": ["Abran la boca", "Abre la boca", "Abro la boca", "Abra la boca"], "answer": 1, "explain": "The affirmative tú command looks like the él/ella present: <strong>Abre</strong> la boca.", "cap": 2}, {"q": "El mandato formal de «tener» es…", "gloss": "irregular", "options": ["tenga", "tiene", "tene", "tenge"], "answer": 0, "explain": "Start from <em>yo tengo</em>, drop -o, add -a: <strong>tenga</strong>.", "cap": 2}, {"q": "A una familia en la sala de espera: «___ aquí, por favor.»", "gloss": "ustedes", "options": ["Espere", "Espera", "Espero", "Esperen"], "answer": 3, "explain": "For a group, add <strong>-n</strong>: <em>Esperen</em> aquí.", "cap": 2}, {"q": "El paciente dice «Muchas gracias». Usted responde…", "gloss": "cortesía", "options": ["Disculpe", "De nada", "Lo siento", "Con permiso"], "answer": 1, "explain": "<strong>De nada</strong> (or <em>con mucho gusto</em>) answers <em>gracias</em>.", "cap": 2}, {"q": "El mandato afirmativo de «sentarse» (usted) es…", "gloss": "pronombres", "options": ["Se siente", "Siéntase", "Siéntese", "Sientesé"], "answer": 2, "explain": "Affirmative: the pronoun attaches and you add an accent: <strong>Siéntese</strong>. Negative: <em>No se siente</em>.", "cap": 2}, {"q": "«No se mueva» significa…", "gloss": "negativo", "options": ["Don't worry", "Don't move", "Don't sit", "Don't eat"], "answer": 1, "explain": "<em>Moverse</em> = to move. <em>No se preocupe</em> = don't worry.", "cap": 2}, {"q": "Mi papá <u>___</u> dolor de pecho.", "gloss": "My dad ___ chest pain.", "options": ["está", "tiene", "hay", "es"], "answer": 1, "explain": "A symptom → <strong>tiene</strong> dolor de pecho.", "cap": 3}, {"q": "<u>___</u> mucha sangre en el piso.", "gloss": "There is a lot of blood on the floor.", "options": ["Está", "Tiene", "Hay", "Es"], "answer": 2, "explain": "There is / there are → <strong>hay</strong>.", "cap": 3}, {"q": "La operadora del 911 dice «No cuelgue». Significa…", "gloss": "The 911 operator says \"No cuelgue.\" It means…", "options": ["Don't hang up.", "Calm down.", "Call 911.", "Don't move him."], "answer": 0, "explain": "<strong>No cuelgue</strong> = Don't hang up (colgar → cuelgue).", "cap": 3}, {"q": "¿Cuál número es «setenta y ocho»?", "gloss": "Which number is \"setenta y ocho\"?", "options": ["68", "78", "87", "708"], "answer": 1, "explain": "<em>Setenta</em> = 70, so <strong>78</strong>. Sesenta = 60.", "cap": 3}, {"q": "Usted quiere saber la edad del paciente. Pregunta…", "gloss": "You want to know the patient's age. You ask…", "options": ["¿Cuántos años es?", "¿Cuántos años tiene?", "¿Qué edad está?", "¿Cuántos años hay?"], "answer": 1, "explain": "Age uses tener: <strong>¿Cuántos años tiene?</strong>", "cap": 3}, {"q": "«¡Socorro!» significa…", "gloss": "vocabulario", "options": ["Sorry!", "Help!", "Careful!", "Hurry!"], "answer": 1, "explain": "<strong>¡Socorro!</strong> (also <em>¡Auxilio!</em>) is a cry for help in real danger.", "cap": 3}, {"q": "Usted ve a una señora en el piso. ¿Qué le pregunta primero?", "gloss": "ofrecer ayuda", "options": ["¿Cómo se escribe?", "¿De dónde es usted?", "¿Necesita ayuda?", "¿Habla inglés?"], "answer": 2, "explain": "Offer help first: <strong>¿Necesita ayuda?</strong>", "cap": 3}, {"q": "Mi papá <u>___</u> dolor de pecho.", "gloss": "describir", "options": ["tiene", "está", "hay", "es"], "answer": 0, "explain": "Symptoms use <strong>tener</strong>: <em>Tiene dolor de pecho.</em>", "cap": 3}, {"q": "<u>___</u> un accidente en la carretera.", "gloss": "describir", "options": ["Tiene", "Está", "Es", "Hay"], "answer": 3, "explain": "<strong>Hay</strong> = there is / there are: <em>Hay un accidente.</em>", "cap": 3}, {"q": "El paciente <u>___</u> inconsciente.", "gloss": "describir", "options": ["tiene", "está", "hay", "puede"], "answer": 1, "explain": "A condition uses <strong>estar</strong>: <em>Está inconsciente.</em>", "cap": 3}, {"q": "El operador pregunta: «¿Dónde está usted?» ¿Cuál es la respuesta lógica?", "gloss": "preguntas urgentes", "options": ["Tengo cuarenta años.", "Me llamo Ana.", "Estoy en la calle Pine, número 45.", "Sí, respira."], "answer": 2, "explain": "<em>¿Dónde?</em> asks for a place: <strong>Estoy en la calle Pine…</strong>", "cap": 3}, {"q": "¿Cómo se dice 47?", "gloss": "números", "options": ["cuarenta y siete", "catorce y siete", "setenta y cuatro", "cuatro y siete"], "answer": 0, "explain": "40 = cuarenta, + <em>y</em> + siete: <strong>cuarenta y siete</strong>.", "cap": 3}, {"q": "La señora <u>___</u> ochenta y dos años.", "gloss": "edad", "options": ["es", "está", "hay", "tiene"], "answer": 3, "explain": "Age uses <strong>tener</strong>: <em>Tiene 82 años</em>, never <em>es</em>.", "cap": 3}, {"q": "«No cuelgue» significa…", "gloss": "mandatos urgentes", "options": ["Don't move", "Don't hang up", "Don't worry", "Don't run"], "answer": 1, "explain": "<em>Colgar</em> = to hang up. The 911 operator says <strong>No cuelgue</strong>.", "cap": 3}, {"q": "¿Cuál número es 70?", "gloss": "parejas peligrosas", "options": ["sesenta", "siete", "setenta", "diecisiete"], "answer": 2, "explain": "<strong>Setenta</strong> = 70. <em>Sesenta</em> = 60. Always repeat the number back.", "cap": 3}, {"q": "Me <u>___</u> las rodillas.", "gloss": "My knees hurt.", "options": ["duele", "duelen", "duelo", "dolor"], "answer": 1, "explain": "<em>Las rodillas</em> is plural → <strong>duelen</strong>.", "cap": 4}, {"q": "A mi hijo <u>___</u> duele el oído.", "gloss": "My son's ear hurts.", "options": ["me", "le", "les", "te"], "answer": 1, "explain": "One third person (a mi hijo) → <strong>le</strong>.", "cap": 4}, {"q": "«El tobillo» es…", "gloss": "\"El tobillo\" is…", "options": ["the wrist", "the elbow", "the ankle", "the hip"], "answer": 2, "explain": "<strong>El tobillo</strong> = ankle. Wrist = <em>la muñeca</em>, elbow = <em>el codo</em>, hip = <em>la cadera</em>.", "cap": 4}, {"q": "Para saber cuánto tiempo tiene el dolor, usted pregunta…", "gloss": "To find out how long the patient has had the pain, you ask…", "options": ["¿Dónde le duele?", "¿Desde cuándo le duele?", "¿Cómo es el dolor?", "¿Le duele mucho?"], "answer": 1, "explain": "<strong>¿Desde cuándo le duele?</strong> Answer: <em>Desde ayer.</em>", "cap": 4}, {"q": "«Es un dolor sordo» significa…", "gloss": "\"Es un dolor sordo\" means…", "options": ["It's a sharp pain.", "It's a dull pain.", "The pain comes and goes.", "It doesn't hurt."], "answer": 1, "explain": "<em>Sordo</em> = dull. <em>Agudo</em> = sharp.", "cap": 4}, {"q": "«La rodilla» es…", "gloss": "el cuerpo", "options": ["the elbow", "the knee", "the ankle", "the wrist"], "answer": 1, "explain": "<strong>La rodilla</strong> = knee. Elbow = <em>el codo</em>, ankle = <em>el tobillo</em>.", "cap": 4}, {"q": "Me <u>___</u> los pies.", "gloss": "doler", "options": ["duele", "duelo", "duelen", "dolor"], "answer": 2, "explain": "<em>Los pies</em> is plural: <strong>me duelen</strong>.", "cap": 4}, {"q": "A mi papá <u>___</u> duele el pecho.", "gloss": "pronombres", "options": ["me", "te", "le", "les"], "answer": 2, "explain": "One third person (él) → <strong>le</strong>: <em>A mi papá le duele el pecho.</em>", "cap": 4}, {"q": "¿Cuál es correcto?", "gloss": "el artículo", "options": ["Me duele mi cabeza.", "Me duele la cabeza.", "Yo duelo la cabeza.", "Me duelen la cabeza."], "answer": 1, "explain": "Use the article with body parts and agree with one head: <strong>Me duele la cabeza.</strong>", "cap": 4}, {"q": "Una paciente adulta. Usted pregunta:", "gloss": "registro", "options": ["¿Dónde te duele?", "¿Dónde me duele?", "¿Dónde le duele?", "¿Dónde les duele?"], "answer": 2, "explain": "Usted takes <strong>le</strong>: <em>¿Dónde le duele?</em>", "cap": 4}, {"q": "«Es un dolor agudo» significa…", "gloss": "tipo de dolor", "options": ["It's a sharp pain.", "It's a dull pain.", "It's a burning pain.", "It's a mild pain."], "answer": 0, "explain": "<em>Agudo</em> = sharp. <em>Sordo</em> = dull. <em>Ardor</em> = burning.", "cap": 4}, {"q": "El paciente responde «Desde ayer». ¿Cuál fue la pregunta?", "gloss": "preguntas", "options": ["¿Dónde le duele?", "¿Cómo es el dolor?", "¿Cuánto le duele?", "¿Desde cuándo?"], "answer": 3, "explain": "<strong>¿Desde cuándo?</strong> asks since when.", "cap": 4}, {"q": "«La mano» es…", "gloss": "género", "options": ["masculino", "femenino"], "answer": 1, "explain": "<em>La mano</em> is feminine even though it ends in -o.", "cap": 4}, {"q": "Tengo dolor de <u>___</u>.", "gloss": "tener dolor de", "options": ["la espalda", "espalda", "mi espalda", "espaldas"], "answer": 1, "explain": "After <em>dolor de</em>, no article: <strong>Tengo dolor de espalda.</strong>", "cap": 4}, {"q": "«Muéstreme dónde le duele» significa…", "gloss": "mandato", "options": ["Tell me why it hurts.", "Show me where it hurts.", "Does it hurt here?", "Point to your head."], "answer": 1, "explain": "<em>Mostrar</em> → <strong>muestre</strong> + <em>me</em>: show me.", "cap": 4}, {"q": "«La sala de espera» es…", "gloss": "\"La sala de espera\" is…", "options": ["the exam room", "the waiting room", "the recovery room", "the pharmacy"], "answer": 1, "explain": "<strong>La sala de espera</strong> = waiting room. Exam room = <em>el consultorio</em>.", "cap": 6}, {"q": "Para recoger su medicina, el paciente va a…", "gloss": "To pick up his medicine, the patient goes to…", "options": ["la farmacia", "radiología", "urgencias", "la recepción"], "answer": 0, "explain": "Medicine → <strong>la farmacia</strong>.", "cap": 6}, {"q": "«Doble a la izquierda» significa…", "gloss": "\"Doble a la izquierda\" means…", "options": ["Go straight.", "Turn right.", "Turn left.", "Go up."], "answer": 2, "explain": "<em>Doble</em> = turn; <em>izquierda</em> = left.", "cap": 6}, {"q": "Usted quiere decir: \"Go up to the second floor.\"", "gloss": "You want to say \"Go up to the second floor.\"", "options": ["Baje al segundo piso.", "Suba al segundo piso.", "Siga al segundo piso.", "Doble al segundo piso."], "answer": 1, "explain": "<em>Subir</em> → <strong>Suba</strong>. <em>Baje</em> = go down.", "cap": 6}, {"q": "Para preguntar la fecha de nacimiento, usted dice…", "gloss": "To ask for the date of birth, you say…", "options": ["¿Qué es su fecha de nacimiento?", "¿Cuál es su fecha de nacimiento?", "¿Cuándo es su nacimiento?", "¿Dónde es su fecha de nacimiento?"], "answer": 1, "explain": "For information on a form: <strong>¿Cuál es…?</strong>", "cap": 6}, {"q": "El mandato formal de «ponerse» es…", "gloss": "The formal command of \"ponerse\" is…", "options": ["Ponga", "Póngase", "Pónese", "Se ponga"], "answer": 1, "explain": "yo <em>pongo</em> → <em>ponga</em> + <em>se</em> → <strong>Póngase</strong>.", "cap": 6}, {"q": "La farmacia está ___ la recepción. (across from)", "gloss": "The pharmacy is across from the front desk.", "options": ["al lado de", "entre", "enfrente de", "al fondo de"], "answer": 2, "explain": "Across from = <strong>enfrente de</strong>.", "cap": 6}, {"q": "En un formulario, «la dirección» es…", "gloss": "On a form, \"la dirección\" is…", "options": ["the direction", "the address", "the director", "the date"], "answer": 1, "explain": "On a form, <strong>la dirección</strong> = address.", "cap": 6}, {"q": "Usted quiere decir: \"I'm going to take your blood pressure.\"", "gloss": "Explain what you are about to do.", "options": ["Tome la presión.", "Voy a tomarle la presión.", "Le duele la presión.", "Tiene que tomar la presión."], "answer": 1, "explain": "<strong>Voy a + infinitivo</strong>: Voy a tomarle la presión.", "cap": 6}, {"q": "«Siga derecho» significa…", "gloss": "\"Siga derecho\" means…", "options": ["Turn right.", "Go straight.", "Sit down.", "Go down."], "answer": 1, "explain": "<em>Derecho</em> = straight; <em>derecha</em> = right.", "cap": 6}, {"q": "«La presión arterial» es…", "gloss": "\"La presión arterial\" is…", "options": ["heart rate", "blood pressure", "blood sugar", "cholesterol"], "answer": 1, "explain": "<strong>La presión arterial</strong> = blood pressure.", "cap": 7}, {"q": "Un paciente dice: «Estoy constipado». ¿Qué le pasa?", "gloss": "A patient says \"Estoy constipado.\" What's wrong?", "options": ["He is constipated.", "He has a cold / is stuffed up.", "He is pregnant.", "He is embarrassed."], "answer": 1, "explain": "False friend! <em>Constipado</em> = has a cold. Constipated = <em>estreñido</em>.", "cap": 7}, {"q": "«Embarazada» significa…", "gloss": "\"Embarazada\" means…", "options": ["embarrassed", "pregnant", "tired", "nauseous"], "answer": 1, "explain": "<strong>Embarazada</strong> = pregnant. Embarrassed = <em>avergonzada</em>.", "cap": 7}, {"q": "La especialista de la piel es…", "gloss": "The skin specialist is…", "options": ["la cardióloga", "la dermatóloga", "la neuróloga", "la oncóloga"], "answer": 1, "explain": "Skin → <strong>la dermatología</strong> → la dermatóloga.", "cap": 7}, {"q": "El especialista de los niños es…", "gloss": "The children's specialist is…", "options": ["el pediatrólogo", "el pediatra", "el pedíatro", "el niñólogo"], "answer": 1, "explain": "Exception: <strong>el / la pediatra</strong> (like <em>psiquiatra</em>).", "cap": 7}, {"q": "«La presión alta» en la historia clínica es…", "gloss": "\"La presión alta\" in the medical chart is…", "options": ["la hipotensión", "la hipertensión", "la diabetes", "el infarto"], "answer": 1, "explain": "Patient word: <em>la presión alta</em> → clinical term: <strong>la hipertensión</strong>.", "cap": 7}, {"q": "¿Cuál es la sílaba tónica de «cardiología»?", "gloss": "Which is the stressed syllable of \"cardiología\"?", "options": ["CAR", "DIO", "LO", "GÍ"], "answer": 3, "explain": "car·dio·lo·<strong>GÍ</strong>·a: the accent mark on í breaks the vowels.", "cap": 7}, {"q": "«El éxito» significa…", "gloss": "\"El éxito\" means…", "options": ["the exit", "success", "the exam", "the emergency"], "answer": 1, "explain": "<strong>El éxito</strong> = success. Exit = <em>la salida</em>.", "cap": 7}, {"q": "¿Qué artículo lleva «síntoma»?", "gloss": "Which article goes with \"síntoma\"?", "options": ["la", "el", "las", "los dos"], "answer": 1, "explain": "<strong>El síntoma</strong>: many Greek words in -ma are masculine (el problema, el sistema).", "cap": 7}, {"q": "Usted quiere decir: \"You need to see the cardiologist.\"", "gloss": "Use the terminology in a sentence.", "options": ["Necesita ver al cardiólogo.", "Tiene cardiología.", "Toma el cardiólogo.", "Es cardiología."], "answer": 0, "explain": "<strong>Necesita ver a + especialista</strong>: a + el = al.", "cap": 7}, {"q": "«Los lácteos» son…", "gloss": "\"Los lácteos\" are…", "options": ["grains", "dairy products", "vegetables", "proteins"], "answer": 1, "explain": "<strong>Los lácteos</strong> = dairy: la leche, el queso, el yogur.", "cap": 8}, {"q": "Los frijoles están en el grupo de…", "gloss": "Beans are in the group of…", "options": ["las frutas", "las proteínas", "los lácteos", "los granos"], "answer": 1, "explain": "Beans are a plant <strong>protein</strong>.", "cap": 8}, {"q": "Un paciente vegetariano…", "gloss": "A vegetarian patient…", "options": ["no come carne", "no come frutas", "solo come carne", "no toma agua"], "answer": 0, "explain": "<strong>Vegetariano</strong> = doesn't eat meat.", "cap": 8}, {"q": "Para la presión alta, el médico recomienda una dieta…", "gloss": "For high blood pressure, the doctor recommends a diet…", "options": ["alta en sal", "baja en sal", "sin agua", "sin verduras"], "answer": 1, "explain": "<strong>Baja en sal</strong> (or <em>sin sal</em>).", "cap": 8}, {"q": "Complete: «Tengo alergia ___ nueces.»", "gloss": "\"I'm allergic to nuts.\"", "options": ["a los", "al", "a las", "a la"], "answer": 2, "explain": "<em>Las nueces</em> is feminine plural → <strong>a las nueces</strong>.", "cap": 8}, {"q": "Complete: «Mi hijo tiene alergia ___ maní.»", "gloss": "\"My son is allergic to peanuts.\"", "options": ["a el", "al", "a la", "a los"], "answer": 1, "explain": "a + el = <strong>al</strong>.", "cap": 8}, {"q": "Para preguntar por los hábitos, usted dice…", "gloss": "To ask about habits, you say…", "options": ["¿Qué come normalmente en el desayuno?", "¿Dónde está la cocina?", "¿Cuántos años tiene la comida?", "¿Es usted la comida?"], "answer": 0, "explain": "<strong>¿Qué come normalmente…?</strong>", "cap": 8}, {"q": "«A veces» significa…", "gloss": "\"A veces\" means…", "options": ["always", "never", "sometimes", "twice"], "answer": 2, "explain": "<strong>A veces</strong> = sometimes.", "cap": 8}, {"q": "¿Cuál es el consejo más respetuoso para un paciente con diabetes que come tortillas todos los días?", "gloss": "Which is the most respectful advice for a diabetic patient who eats tortillas every day?", "options": ["Nunca coma tortillas.", "Coma dos tortillas de maíz en vez de cuatro de harina.", "Su comida no es saludable.", "Coma solo comida americana."], "answer": 1, "explain": "Keep the food; change the amount and the type.", "cap": 8}, {"q": "«Soy intolerante a la lactosa» significa…", "gloss": "\"Soy intolerante a la lactosa\" means…", "options": ["I'm allergic to peanuts.", "Milk gives me stomach problems.", "I'm vegetarian.", "I don't eat sugar."], "answer": 1, "explain": "Intolerance (stomach upset) is not the same as an allergy.", "cap": 8}, {"q": "«El expediente» es…", "gloss": "\"El expediente\" is…", "options": ["the bill", "the medical record", "the waiting room", "the password"], "answer": 1, "explain": "<strong>El expediente (médico)</strong> = the chart / medical record.", "cap": 9}, {"q": "Para pedir la fecha de nacimiento, usted pregunta…", "gloss": "To ask for the date of birth, you ask…", "options": ["¿Qué es su fecha de nacimiento?", "¿Cuál es su fecha de nacimiento?", "¿Cuándo nace?", "¿Qué fecha tiene?"], "answer": 1, "explain": "Information → <strong>¿Cuál es…?</strong>", "cap": 9}, {"q": "«500» en español es…", "gloss": "\"500\" in Spanish is…", "options": ["cincocientos", "quinientos", "cinco cien", "quinientas mil"], "answer": 1, "explain": "Irregular: <strong>quinientos</strong>.", "cap": 9}, {"q": "«1985» se dice…", "gloss": "\"1985\" is said…", "options": ["diecinueve ochenta y cinco", "mil novecientos ochenta y cinco", "un mil nueve ochenta cinco", "mil nueve cientos ochenta y cinco"], "answer": 1, "explain": "<strong>Mil novecientos ochenta y cinco.</strong>", "cap": 9}, {"q": "En un formulario de México, «10/04/2019» es…", "gloss": "On a form from Mexico, \"10/04/2019\" is…", "options": ["October 4, 2019", "April 10, 2019", "April 4, 2019", "October 10, 2019"], "answer": 1, "explain": "Day / month / year → <strong>el diez de abril</strong>.", "cap": 9}, {"q": "«Su cita es ___ lunes ___ las diez.»", "gloss": "\"Your appointment is on Monday at ten.\"", "options": ["en / a", "el / a", "el / en", "en / en"], "answer": 1, "explain": "<strong>el</strong> lunes, <strong>a</strong> las diez.", "cap": 9}, {"q": "«1:00 p. m.» se dice…", "gloss": "\"1:00 p.m.\" is said…", "options": ["a las una de la tarde", "a la una de la tarde", "a uno de la tarde", "a las uno de la noche"], "answer": 1, "explain": "Singular: <strong>a la una</strong>.", "cap": 9}, {"q": "«Sign it here» (el formulario) es…", "gloss": "\"Sign it here\" (the form) is…", "options": ["Firme aquí.", "Fírmelo aquí.", "Lo firma aquí.", "Fírmela aquí."], "answer": 1, "explain": "<em>El formulario</em> → <strong>lo</strong> → <em>fírmelo</em> (with an accent).", "cap": 9}, {"q": "Usted quiere decir «Bring your insurance card.»", "gloss": "You want to say \"Bring your insurance card.\"", "options": ["Trae tu tarjeta del seguro.", "Traiga su tarjeta del seguro.", "Traer su tarjeta del seguro.", "Traigo su tarjeta del seguro."], "answer": 1, "explain": "traer → <strong>traiga</strong> (usted command).", "cap": 9}, {"q": "«Marital status» en un formulario es…", "gloss": "\"Marital status\" on a form is…", "options": ["estatus marital", "estado civil", "estado de matrimonio", "condición familiar"], "answer": 1, "explain": "<strong>Estado civil</strong>: soltero/a, casado/a, divorciado/a, viudo/a.", "cap": 9}];
+/* ═══ Repaso final · logic ═══ */
+function checkMCset(key, rsId){
+  var data = MC_SETS[key], correct = 0;
+  data.forEach(function(_, i){ if(revealMC(key, i)) correct++; });
+  setMsg(rsId, correct===data.length, correct+' / '+data.length+' correctas.'+(correct===data.length?' ¡Excelente! ✓':' Lea las explicaciones.'));
+  updateCompletion();
+}
+function resetMCset(key, rsId){ resetMC(key); var m=document.getElementById(rsId); m.className='res-msg'; m.textContent=''; updateCompletion(); }
+function mcCorrect(key){ var c=0; (MC_SETS[key]||[]).forEach(function(it, i){ if(quizState[key] && quizState[key][i]===it.answer) c++; }); return c; }
+function mcAnswered(key){ return (MC_SETS[key]||[]).map(function(_, i){ return !!(quizState[key] && quizState[key][i]!==null); }); }
+
+/* ── Examen mixto ── */
+var mixTries = 0, mixBest = 0;
+function shuffle(a){ a = a.slice(); for(var k=a.length-1;k>0;k--){ var r=Math.floor(Math.random()*(k+1)); var t=a[k]; a[k]=a[r]; a[r]=t; } return a; }
+function newMix(){
+  var pick = [];
+  WEEKS.forEach(function(w){ pick = pick.concat(shuffle(ALL_BANK.filter(function(q){ return q.cap===w.n; })).slice(0, 2)); });
+  var rest = shuffle(ALL_BANK.filter(function(q){ return pick.indexOf(q)===-1; }));
+  pick = shuffle(pick.concat(rest.slice(0, 20 - pick.length)));
+  var data = pick.map(function(q){ return { q:'<span class="wk-tag">Semana '+q.cap+'</span> '+q.q, gloss:q.gloss, options:q.options, answer:q.answer, explain:q.explain, cap:q.cap }; });
+  buildMC(data, 'mix', 'mixCont');
+  document.getElementById('mixInfo').textContent = '20 preguntas · al menos 2 de cada semana · banco de '+ALL_BANK.length+' preguntas';
+  var m=document.getElementById('rsMix'); m.className='res-msg'; m.textContent='';
+  updateCompletion();
+}
+function scoreMix(){
+  var data = MC_SETS.mix, c = 0, miss = {};
+  data.forEach(function(q, i){ if(revealMC('mix', i)) c++; else miss[q.cap]=(miss[q.cap]||0)+1; });
+  var pct = Math.round(c/data.length*100); mixTries++; if(pct>mixBest) mixBest=pct;
+  var weak = Object.keys(miss).sort(function(a,b){ return miss[b]-miss[a]; }).slice(0,3).map(function(k){ return 'Semana '+k; });
+  setMsg('rsMix', pct>=80, c+' / '+data.length+' ('+pct+'%). '+(weak.length?'Review: '+weak.join(', ')+'.':'¡Perfecto! ✓')+' Best: '+mixBest+'%.');
+  updateCompletion();
+}
+
+/* ── Completion & score ── */
+function blankIds(w){ var a=[]; for(var i=1;i<=w.nb;i++) a.push('w'+w.n+'_'+i); return a; }
+var completionGroups = [{ label:'Nombre', tab:'ov', items:function(){ return [val('studentName').length>0]; } }].concat(
+  WEEKS.map(function(w){ return { label:'Semana '+w.n, tab:'s'+w.n, items:function(){ return blankIds(w).map(function(id){ return val(id).length>0; }).concat(mcAnswered('w'+w.n)); } }; }),
+  [{ label:'Examen mixto', tab:'mix', items:function(){ return mcAnswered('mix'); } }]);
+function completionStats(){ return completionGroups.map(function(g){ var a=g.items(); return { label:g.label, tab:g.tab, done:a.filter(Boolean).length, total:a.length }; }); }
+function blanksRight(w){ return blankIds(w).filter(function(id){ var el=document.getElementById(id); return el && isRight(el); }).length; }
+function computeScore(){
+  var c=0, t=0;
+  WEEKS.forEach(function(w){ c+=blanksRight(w); t+=w.nb; c+=mcCorrect('w'+w.n); t+=MC_SETS['w'+w.n].length; });
+  c+=mcCorrect('mix'); t+=(MC_SETS.mix||[]).length;
+  return { correct:c, total:t };
+}
+function updateScore(){ var s=computeScore(); var pct=s.total?Math.round(s.correct/s.total*100):0; var el=document.getElementById('completionScore'); if(el) el.textContent='★ '+pct+'% correcto'; }
+var READY = false;
+function updateCompletion(){
+  if(!READY) return;
+  var stats=completionStats(), d=0, t=0; stats.forEach(function(g){ d+=g.done; t+=g.total; });
+  var pct=t?Math.round(d/t*100):0;
+  document.getElementById('completionPct').textContent=pct+'%';
+  document.getElementById('pf').style.width=pct+'%';
+  document.getElementById('completionLegend').innerHTML = stats.map(function(g){ return '<button type="button" class="legend-pill '+(g.done===g.total?'done':'')+'" onclick="jumpTab(\''+g.tab+'\')">'+g.label+' '+g.done+'/'+g.total+'</button>'; }).join('');
+  updateScore();
+}
+function jumpTab(tab){ var btns=document.querySelectorAll('.tab'); for(var i=0;i<btns.length;i++){ if((btns[i].getAttribute('onclick')||'').indexOf("'"+tab+"'")!==-1){ switchTab(tab, btns[i]); return; } } switchTab(tab, null); }
+document.addEventListener('input', updateCompletion);
+document.addEventListener('change', updateCompletion);
+
+/* ── Report ── */
+function buildReportHtml(name){
+  var stamp = new Date().toLocaleString('en-US',{ year:'numeric', month:'long', day:'numeric', hour:'2-digit', minute:'2-digit' });
+  var s=computeScore(), sp=s.total?Math.round(s.correct/s.total*100):0;
+  var stats=completionStats(), cd=0, ct=0; stats.forEach(function(g){ cd+=g.done; ct+=g.total; });
+  var rows = WEEKS.map(function(w){ var b=blanksRight(w), m=mcCorrect('w'+w.n), tot=w.nb+MC_SETS['w'+w.n].length, p=Math.round((b+m)/tot*100); return '<tr class="'+(p>=80?'ok':'bad')+'"><td>Semana '+w.n+' · '+escapeHtml(w.t)+'</td><td class="num">'+b+' / '+w.nb+'</td><td class="num">'+m+' / '+MC_SETS['w'+w.n].length+'</td><td class="mark">'+p+'%</td></tr>'; }).join('');
+  var weak = WEEKS.filter(function(w){ var tot=w.nb+MC_SETS['w'+w.n].length; return (blanksRight(w)+mcCorrect('w'+w.n))/tot < 0.8; }).map(function(w){ return 'Semana '+w.n; });
+  var detail = WEEKS.map(function(w){ return reportTable('Semana '+w.n+' · '+w.t, '', [collectBlanks('w'+w.n+'_', w.nb, 'Práctica: complete'), { heading:'Opción múltiple', items:mcReport(MC_SETS['w'+w.n], 'w'+w.n) }]); }).join('');
+  return '<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><title>Repaso final · '+escapeHtml(name)+'</title><style>'+
+  "body{font-family:Georgia,'Times New Roman',serif;color:#2A2118;max-width:850px;margin:0 auto;padding:40px 32px;line-height:1.6;} h1{font-size:1.6rem;color:#1B2A4A;margin:0 0 6px;} header{border-bottom:4px solid #C45D3A;padding-bottom:16px;margin-bottom:24px;}"+
+  ".meta{font-family:'Courier New',monospace;font-size:0.78rem;color:#6B5D4A;} .summary{background:#FBF5EA;border-left:5px solid #D4A24C;padding:14px 18px;margin-bottom:24px;}"+
+  "h2{font-size:1.1rem;color:#1B2A4A;margin:28px 0 10px;border-left:5px solid #C45D3A;padding-left:12px;} h3{font-size:0.78rem;font-family:'Courier New',monospace;text-transform:uppercase;color:#6B5D4A;margin:14px 0 6px;font-weight:normal;}"+
+  ".score{font-family:'Courier New',monospace;font-size:0.72rem;font-weight:normal;color:#6B5D4A;display:block;} table{width:100%;border-collapse:collapse;font-size:0.86rem;margin-bottom:8px;} td,th{padding:7px 10px;border-bottom:1px solid #EDE2CE;vertical-align:top;text-align:left;}"+
+  "td.num{font-family:'Courier New',monospace;font-size:0.8rem;} td.note{font-size:0.78rem;color:#6B5D4A;font-style:italic;} td.mark{text-align:center;font-weight:bold;} tr.ok{background:#F2F8EE;} tr.bad{background:#FCF0EE;} .blanktxt{color:#A89A88;}"+
+  '@media print{body{padding:0;}table{page-break-inside:avoid;}}</style></head><body>'+
+  '<header><h1>Spanish for Healthcare Workers · Repaso para el examen final</h1><p class="meta"><strong>Estudiante:</strong> '+escapeHtml(name)+' · Generado: '+escapeHtml(stamp)+'</p></header>'+
+  '<div class="summary"><strong>Puntuación:</strong> '+s.correct+' / '+s.total+' ('+sp+'%) · Completado: '+cd+' / '+ct+' · Examen mixto: '+(mixTries?'mejor resultado '+mixBest+'% ('+mixTries+' intento/s)':'no completado')+'<br><strong>Para estudiar más:</strong> '+(weak.length?weak.join(', '):'¡todo por encima del 80%!')+'</div>'+
+  '<h2>Resumen por semana</h2><table><tr><th>Semana</th><th>Complete</th><th>Opción múltiple</th><th>%</th></tr>'+rows+'</table>'+detail+
+  '<footer style="margin-top:30px;font-family:Courier New,monospace;font-size:0.7rem;color:#6B5D4A;">SPSCC · Spanish for Healthcare Workers · Repaso final</footer></body></html>';
+}
+function downloadReport(){
+  var field=document.getElementById('studentName'), name=(field.value||'').trim();
+  if(!name){ field.focus(); field.style.borderColor='#A8452A'; alert('Escribe tu nombre primero. / Please enter your name first.'); setTimeout(function(){ field.style.borderColor=''; },2500); return; }
+  var blob=new Blob([buildReportHtml(name)],{type:'text/html;charset=utf-8'}), url=URL.createObjectURL(blob);
+  var a=document.createElement('a'); a.href=url; a.download='Repaso_Final_'+(name.replace(/[^a-z0-9]+/gi,'_').replace(/^_+|_+$/g,'')||'estudiante')+'.html'; document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  setTimeout(function(){ URL.revokeObjectURL(url); },1000);
+}
+
+/* ── Build ── */
+WEEKS.forEach(function(w){ buildMC(WEEK_MC[w.n], 'w'+w.n, 'mcW'+w.n); });
+newMix();
+READY = true;
+updateCompletion();
+</script>
+
+</body>
+</html>
